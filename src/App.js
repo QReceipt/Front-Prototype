@@ -1,10 +1,18 @@
 import './App.css';
-import Receipt from './component/Detail'
-
+import Register from "./component/Register";
+import Main from "./component/Main";
+import Detail from "./component/Detail";
+import {HashRouter, Route} from "react-router-dom";
 function App() {
   return (
-    <Receipt
-    />
+    
+    <HashRouter>
+    <div className="App">
+    <Route path="/" exact={true} component={Main}/>
+    <Route path="/signup" component={Register}/>
+    <Route path="/detail" component={Detail}/>
+  </div>
+  </HashRouter>
   );
 }
 

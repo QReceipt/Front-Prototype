@@ -5,7 +5,7 @@ import "./Detail.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
-    paDding-top: 90px;
+    padding-top:78px;
 `;
 
 let Dl = styled.dl`
