@@ -3,9 +3,10 @@
     font-size : 150%;
     height:8%;
     margin : 25px;
+    text-decoration: none;
 }
 
-.plusFun:before {
+.plusFun:before { 
     transform: scaleX(0);
     transform-origin: bottom right;
 }
