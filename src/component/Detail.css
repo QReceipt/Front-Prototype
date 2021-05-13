@@ -1,0 +1,65 @@
+.Title {
+    font-size: 350%;
+}
+
+.index {
+    list-style: none;
+    padding: 0;
+}
+
+.index > * {
+    font-size: 150%;
+    padding: 3%;
+}
+
+.detailOption > * {
+    width: 100%;
+    text-align: left;
+}
+
+
+@media (min-width:1200px) {
+    .detailOption > * {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .index {
+        margin-block: 3%;
+    }
+
+    .receipt {
+        padding: 0;
+    }
+
+    .Title {
+        font-size: 250%;
+    }
+
+    .index > li {
+        display: inline;
+        padding: 5%;
+    }
+
+    .detailOption {
+        padding-right: 5px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    .detailOption {
+        padding: 35px;
+    }
+
+    .index {
+        margin-block: 5%;
+    }
+
+    .detailOption > * {
+        border-block: soild #979797 1px;
+        padding-inline: 20px;
+        padding-block: 5px;
+    }
+}
