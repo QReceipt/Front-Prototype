@@ -1,0 +1,46 @@
+th{
+    width:17%;
+}
+
+td{
+    width : 70%;
+}
+
+.checkRepeat{
+    width : 85%;
+}
+
+*{
+    font-size: 100%;
+}
+
+@media only screen and (min-width : 640px)
+{
+
+    .signupframe{
+        width :100%;
+        height: auto;
+        margin: 0 auto;
+        border : 2px #e0e0e0 solid;
+        box-shadow : 3px 3px 3px #979797;
+        position: relative;
+    }
+    
+    .signupframe>*{
+        text-align: left;
+        margin-top : 2%;
+        margin-inline : 3%;
+    }
+}
+
+@media only screen and (max-width : 640px)
+{
+    .signupframe{
+        width:100%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+
+/** 1. 아예 모바일 환경으로 만들기... 2. ......어케든 최선을 다해보기 **/
