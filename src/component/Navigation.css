@@ -44,6 +44,7 @@
     height : 9px;
     background-color: hsl(200 100% 80%);
     border-radius: 15px;
+    transition: all .3s;
 }
 
 @media (min-width : 1000px){

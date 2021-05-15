@@ -35,9 +35,9 @@ function Navigation() {
                 </li>
             </Ul>
             <div id="menubar">
-                <div className="hambuger"></div>
-                <div className="hambuger"></div>
-                <div className="hambuger"></div>
+                <div className="hambuger top-bar"></div>
+                <div className="hambuger middle-bar"></div>
+                <div className="hambuger bottom-bar"></div>
             </div>
         </NaviBody>
 
