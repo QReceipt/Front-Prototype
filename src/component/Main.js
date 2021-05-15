@@ -1,6 +1,5 @@
 import React from "react";
 import Receipt from "./Receipt"
-import Navigation from "./Navigation"
 import "./Main.css"
 import styled from 'styled-components'
 
@@ -21,9 +20,6 @@ let Title = styled.div `
 function Main() {
     return (
         <DetailBody className="container-fulid">
-            <div className="menu row">
-                <Navigation className="col-12"/>
-            </div>
             <div>
                 <Title className="row">QReceipt</Title>
                 <LoginForm  className="classBody row text-center">

@@ -1,15 +1,9 @@
 import React from "react";
-
 import "./Register.css"
-import Navigation from "./Navigation"
 
 function Register() {
     return (
         <div className="container-fulid">
-            <div className="row">
-                <Navigation className="col-lg-12"/>
-            </div>
-
         <div className= "mt-5 pt-5">
             <div className="signupframe pt-4 col-9">
                 <h1 className="display-4 mt-2 mb-4">SIGNUP</h1>

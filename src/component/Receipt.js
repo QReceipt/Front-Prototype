@@ -162,7 +162,7 @@ function loginForm(props) {
                 <dt className="plusFun w-100">회원가입</dt>
             </dl>
             <dl>
-                <dd className="plus w-100">아이디/비밀번호를 잊어버렸다면?<br></br></dd>
+                <dd className="plus w-100">아이디/비밀번호를 잊어버렸다면?</dd>
                 <dt className="plusFun w-100">아이디/비밀번호 찾기</dt>
             </dl>
         </Ended>
