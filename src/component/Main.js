@@ -1,7 +1,7 @@
 import React from "react";
 import Receipt from "./Receipt"
 import Navigation from "./Navigation"
-import "./Detail.css"
+import "./Main.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
@@ -25,9 +25,9 @@ function Main() {
             <div className="menu row">
                 <Navigation className="col-12"/>
             </div>
-            <div>
+            <div id = "classBody">
                 <Title className="row">QReceipt</Title>
-                <LoginForm className="row text-center w-100">
+                <LoginForm className="row text-center">
                     <Receipt form="false"/>
                 </LoginForm>
             </div>

@@ -127,13 +127,13 @@ function loginForm(props) {
                     <tr className="d-flex">
                         <Td className="col-3">아이디</Td>
                         <Td className="col-9 text-center">
-                            <input class="w-100 py-2 px-4 border rounded-pill"></input>
+                            <input className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
                     <tr className="d-flex">
                         <Td className="col-3">비밀번호</Td>
                         <Td className="col-9 text-center">
-                            <input type="password" class="w-100 py-2 px-4 border rounded-pill"></input>
+                            <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
                     <tr className="d-flex">
@@ -144,7 +144,7 @@ function loginForm(props) {
                     <tr className="d-flex">
                         <Th colSpan="2" className="col-12 text-right">
                             <input
-                                class="loginBtn btn btn-dark btn-lg rounded-pill"
+                                className="loginBtn btn btn-dark btn-lg rounded-pill"
                                 type="button"
                                 value="로그인"></input>
                         </Th>
@@ -162,7 +162,7 @@ function loginForm(props) {
                 <dt className="plusFun w-100">회원가입</dt>
             </dl>
             <dl>
-                <dd className="plus w-100">아이디/비밀번호를 잊어버렸다면?</dd>
+                <dd className="plus w-100">아이디/비밀번호를 잊어버렸다면?<br></br></dd>
                 <dt className="plusFun w-100">아이디/비밀번호 찾기</dt>
             </dl>
         </Ended>

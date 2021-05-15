@@ -14,9 +14,8 @@ td{
     font-size: 100%;
 }
 
-@media only screen and (min-width : 640px)
+@media only screen and (min-width : 500px)
 {
-
     .signupframe{
         width :100%;
         height: auto;
@@ -42,5 +41,3 @@ td{
     }
 }
 
-
-/** 1. 아예 모바일 환경으로 만들기... 2. ......어케든 최선을 다해보기 **/
