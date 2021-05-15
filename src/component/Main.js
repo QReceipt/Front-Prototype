@@ -9,7 +9,6 @@ let DetailBody = styled.div `
 `;
 
 let LoginForm = styled.div `
-    width: 32%;
     margin-inline: auto;
     position:absolute;
 `;
@@ -25,9 +24,9 @@ function Main() {
             <div className="menu row">
                 <Navigation className="col-12"/>
             </div>
-            <div id = "classBody">
+            <div>
                 <Title className="row">QReceipt</Title>
-                <LoginForm className="row text-center">
+                <LoginForm  className="classBody row text-center">
                     <Receipt form="false"/>
                 </LoginForm>
             </div>
