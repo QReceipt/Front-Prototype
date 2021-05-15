@@ -34,6 +34,11 @@ function Navigation() {
                     <Link className="plusFun" to="/signup">회원가입</Link>
                 </li>
             </Ul>
+            <div id="menubar">
+                <div className="hambuger"></div>
+                <div className="hambuger"></div>
+                <div className="hambuger"></div>
+            </div>
         </NaviBody>
 
     )

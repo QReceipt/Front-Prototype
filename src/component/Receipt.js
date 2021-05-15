@@ -136,9 +136,6 @@ function loginForm(props) {
                             <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
-                    <tr className="d-flex">
-                        <Td className="col-12 p-4"></Td>
-                    </tr>
                 </tbody>
                 <tfoot>
                     <tr className="d-flex">

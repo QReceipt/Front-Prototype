@@ -43,7 +43,7 @@ function Register() {
                     </tr>
                     <tfoot className="d-flex">
                         <th className="col-offset-3 col-11 text-right">
-                            <input class="btn btn-dark btn-lg rounded-pill" type="button" value="가입"></input>
+                            <input className="btn btn-dark btn-lg rounded-pill" type="button" value="가입"></input>
                         </th>
                     </tfoot>
                 </table>

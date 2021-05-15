@@ -1,16 +1,16 @@
 .frame{
     width: 90%;
     height: auto;
-    margin: 0 auto;
     border: 2px #e0e0e0 solid;
     box-shadow: 3px 3px 3px #979797;
-    position: relative;
+    margin : 0 auto;
 }
 
 .frame > * {
     text-align: left;
     margin-top: 2%;
     margin-inline: 3%;
+    background-color: #fff;
 }
 
 .plus,

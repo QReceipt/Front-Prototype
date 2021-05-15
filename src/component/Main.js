@@ -9,7 +9,6 @@ let DetailBody = styled.div `
 
 let LoginForm = styled.div `
     margin-inline: auto;
-    position:absolute;
 `;
 
 let Title = styled.div `
@@ -17,15 +16,22 @@ let Title = styled.div `
     font-size : 400%;
 `;
 
+let Body = styled.div`
+    margin : 0;
+    padding : 0;
+    text-align : center;
+`;
+
 function Main() {
+    
     return (
         <DetailBody className="container-fulid">
-            <div>
+            <Body>
                 <Title className="row">QReceipt</Title>
                 <LoginForm  className="classBody row text-center">
-                    <Receipt form="false"/>
+                    <Receipt id="Receipt" form="false"/>
                 </LoginForm>
-            </div>
+            </Body>
         </DetailBody>
     );
 }

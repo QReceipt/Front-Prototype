@@ -34,10 +34,26 @@
     transition: transform 0.3s ease;
 }
 
+#menubar{
+    margin : 3%;
+}
+
+.hambuger {
+    margin-block : 3px;
+    width : 40px;
+    height : 9px;
+    background-color: hsl(200 100% 80%);
+    border-radius: 15px;
+}
+
 @media (min-width : 1000px){
     .navLi{
         margin-block:50px;
         display: inline;
+    }
+
+    #menubar{
+        display : none;
     }
 }
 
@@ -46,5 +62,10 @@
         margin-block:50px;
         display: block;
         display : none;
+    }
+    #menubar{
+        position: absolute;
+        top : 0;
+        left : 0;
     }
 }
