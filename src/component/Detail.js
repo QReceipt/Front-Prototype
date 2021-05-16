@@ -1,11 +1,10 @@
 import React from "react";
 import Receipt from "./Receipt"
-import Navigation from "./Navigation"
 import "./Detail.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
-    paDding-top: 90px;
+    padding-top:78px;
 `;
 
 let Dl = styled.dl`
@@ -40,9 +39,6 @@ function Detail({
 
     return (
         <DetailBody className="container-fulid">
-            <div className="menu row">
-                <Navigation className="col-12" />
-            </div>
             <div className="row text-center w-100 p-0 m-0">
                 <div className="col-xl-3">
                     <h1 className="Title">영수증 상세보기</h1>
@@ -52,7 +48,7 @@ function Detail({
                 </div>
 
                 <div className="receipt col-xl-4 col-md-7 align-self-center">
-                    <Receipt form="true"/>
+                    <Receipt form="1"/>
                 </div>
 
                 <div className="detailOption col-xl-auto col-md-5">
