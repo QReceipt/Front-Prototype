@@ -1,5 +1,5 @@
 .Title {
-    font-size: 350%;
+    font-size: 300%;
 }
 
 .index {
@@ -17,6 +17,14 @@
     text-align: left;
 }
 
+.sideIndex{
+    color : black;
+}
+
+.sideIndex:hover{
+    color : #DAED79;
+    font-size : 250%;
+}
 
 @media (min-width:1200px) {
     .detailOption > * {

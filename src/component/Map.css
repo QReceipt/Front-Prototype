@@ -1,0 +1,16 @@
+#Map{
+    height : 400px;
+}
+
+.Title {
+    font-size: 300%;
+}
+
+@media screen and (max-size:1000px) {
+    #Map{
+        width : 80%;
+        height : 40%;
+        padding : 0;
+        margin : 0;
+    }
+}
