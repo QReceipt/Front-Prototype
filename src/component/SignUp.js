@@ -22,18 +22,18 @@ let Body = styled.div`
     text-align : center;
 `;
 
-function Main() {
+function SignUp() {
     
     return (
         <DetailBody className="container-fulid">
             <Body>
-                <Title className="row">QReceipt</Title>
+                <Title className="row">회원가입</Title>
                 <LoginForm  className="classBody row text-center">
-                    <Receipt id="Receipt" form="2"/>
+                    <Receipt id="Receipt" form="3"/>
                 </LoginForm>
             </Body>
         </DetailBody>
     );
 }
 
-export default Main;
+export default SignUp;

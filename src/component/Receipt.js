@@ -2,22 +2,22 @@ import React from "react";
 import styled from 'styled-components';
 import './Receipt.css';
 
-let Ended = styled.div`
+let Ended = styled.div `
     display:block;
     margin : 0;
     padding : 0;
 `;
 
-let Text = styled.div`
+let Text = styled.div `
     font-size:130%;
     padding:0;
 `;
 
-let Td = styled.td`
+let Td = styled.td `
     font-size:130%;
 `;
 
-let Th = styled.td`
+let Th = styled.td `
     font-size:130%;
 `;
 
@@ -27,9 +27,13 @@ function Receipt(props) {
     return (
         <div className="frame">
             {
-                componentForm === "true"
+                componentForm === "1"
                     ? receiptForm(props)
-                    : loginForm(props)
+                    : (
+                        componentForm === "2"
+                            ? loginForm(props)
+                            : Register(props)
+                    )
             }
         </div>
     )
@@ -56,11 +60,10 @@ const orderMenu = [
     }
 ]
 
-
 function sumCnt(item) {
     var sum = 0;
 
-    for (var i = 0; i<item.length; i++){
+    for (var i = 0; i < item.length; i++) {
         sum += item[i].won;
     }
 
@@ -85,7 +88,7 @@ function receiptForm(props) {
             </Text>
             <table className="table">
                 <thead>
-                    <tr className="d-flex">
+                    <tr>
                         <Th className="col-6">메뉴</Th>
                         <Th className="col-3 text-center">수량</Th>
                         <Th className="col-3 text-center">금액</Th>
@@ -95,7 +98,7 @@ function receiptForm(props) {
                     {orderMenu.map(renderItem)}
                 </tbody>
                 <tfoot>
-                    <tr className="d-flex">
+                    <tr>
                         <Th className="col-9" colSpan="2">합계</Th>
                         <Th className="col-3 text-center">{sumCnt(orderMenu)}</Th>
                     </tr>
@@ -119,18 +122,18 @@ function loginForm(props) {
             <h1 className="display-4 mt-2 mb-4">LOGIN</h1>
             <table className="table">
                 <thead>
-                    <tr className="d-flex">
+                    <tr>
                         <Th colSpan="2" className="col-12">로그인하기</Th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="d-flex">
+                    <tr>
                         <Td className="col-3">아이디</Td>
                         <Td className="col-9 text-center">
                             <input className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
-                    <tr className="d-flex">
+                    <tr>
                         <Td className="col-3">비밀번호</Td>
                         <Td className="col-9 text-center">
                             <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
@@ -138,7 +141,7 @@ function loginForm(props) {
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr className="d-flex">
+                    <tr>
                         <Th colSpan="2" className="col-12 text-right">
                             <input
                                 className="loginBtn btn btn-dark btn-lg rounded-pill"
@@ -168,10 +171,66 @@ function loginForm(props) {
 
 function Menu({menu, cnt, won}) {
     return (
-        <tr className="d-flex">
+        <tr>
             <Td className="col-6">{menu}</Td>
             <Td className="col-3 text-center">{cnt}</Td>
             <Td className="col-3 text-center">{won}</Td>
         </tr>
+    )
+}
+
+function Register() {
+    return (
+        <div className="container-fulid">
+            <Ended className="box row">
+                <Text className="col-lg-9 pl-0 my-2">QReceipt</Text>
+            </Ended>
+            <div className="mt-0">
+                <h1 className="display-4 mt-2 mb-4">Register</h1>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <Th colSpan="2" className="col-12">회원가입하기</Th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <Td className="col-4">아이디</Td>
+                            <Td className="col-8 text-center">
+                                <input className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">비밀번호</Td>
+                            <Td className="col-8 text-center">
+                                <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">비밀번호 확인</Td>
+                            <Td className="col-8 text-center">
+                                <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">전화번호</Td>
+                            <Td className="col-8 text-center">
+                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                                <span>-</span>
+                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                                <span>-</span>
+                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div>
+                <input
+                    className="loginBtn btn btn-dark btn-lg rounded-pill"
+                    type="button"
+                    value="로그인"></input></div>
+            </div>
+        </div>
     )
 }

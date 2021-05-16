@@ -48,7 +48,7 @@ function Detail({
                 </div>
 
                 <div className="receipt col-xl-4 col-md-7 align-self-center">
-                    <Receipt form="true"/>
+                    <Receipt form="1"/>
                 </div>
 
                 <div className="detailOption col-xl-auto col-md-5">

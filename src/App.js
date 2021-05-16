@@ -1,5 +1,5 @@
 import './App.css';
-import Register from "./component/Register";
+import Register from "./component/SignUp";
 import Main from "./component/Main";
 import Detail from "./component/Detail";
 import Navigation from "./component/Navigation";
