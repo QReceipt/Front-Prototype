@@ -13,6 +13,7 @@ let Ended = styled.div `
 let Text = styled.div `
     font-size:130%;
     padding:0;
+    z-index: 30;
 `;
 
 let Td = styled.td `
@@ -172,10 +173,6 @@ function LoginForm(props) {
             <dl>
                 <dd className="plus w-100">아직 가입이 안 되어 있다면?</dd>
                 <dt className="plusFun w-100">회원가입</dt>
-            </dl>
-            <dl>
-                <dd className="plus w-100">아이디/비밀번호를 잊어버렸다면?</dd>
-                <dt className="plusFun w-100">아이디/비밀번호 찾기</dt>
             </dl>
         </Ended>
     </div>

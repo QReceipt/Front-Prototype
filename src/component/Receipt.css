@@ -4,6 +4,7 @@
     border: 2px #e0e0e0 solid;
     box-shadow: 3px 3px 3px #979797;
     margin : 0 auto;
+    z-index: 30;
 }
 
 .frame > * {
@@ -11,6 +12,7 @@
     margin-top: 2%;
     margin-inline: 3%;
     background-color: #fff;
+    z-index: 30;
 }
 
 .plus,
@@ -45,7 +47,7 @@
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
-    background: hsl(200 100% 80%);
+    background: #DAED79;
     z-index: -1;
     transition: transform 0.3s ease;
 }

@@ -15,6 +15,8 @@ let Title = styled.div `
 margin-inline : 0;
 margin-block : 2%;
     font-size : 400%;
+    position :relative;
+    z-index:50;
     font-family: 'Cafe24Ohsquare';
 `;
 

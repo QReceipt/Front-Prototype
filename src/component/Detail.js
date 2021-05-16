@@ -34,7 +34,7 @@ function Detail({
     var lists = [];
 
     while (i < 5) {
-        lists.push(<li>{i + 1}</li>);
+        lists.push(<li className="sideIndex">{i + 1}</li>);
         i += 1;
     }
 

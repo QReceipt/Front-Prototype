@@ -8,8 +8,8 @@ function App() {
   return (
     
     <HashRouter>
-      <Navigation className="col-12" />
-    <div className="App">
+      <Navigation className="col-12" id="Nav" />
+    <div className="App" id="Body" >
     <Route path="/" exact={true} component={Main}/>
     <Route path="/signup" component={Register}/>
     <Route path="/detail" component={Detail}/>

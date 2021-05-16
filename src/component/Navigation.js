@@ -31,6 +31,11 @@ function Navigation() {
 
     return (
         <NaviBody>
+            <button id="menubar" onClick={toggle}>{
+                    on
+                        ? <Cancled/>
+                        : <Hambuger/>
+                }</button>
             <Ul>
                 <li className="navLi" role="presentation">
                     <Link className="plusFun" to="/">메인</Link>
@@ -43,13 +48,6 @@ function Navigation() {
                     <Link className="plusFun" to="/signup">회원가입</Link>
                 </li>
             </Ul>
-
-            <button id="menubar" onClick={toggle}>{
-                    on
-                        ? <Hambuger/>
-                        : <Cancled/>
-                }</button>
-
         </NaviBody>
 
     )
