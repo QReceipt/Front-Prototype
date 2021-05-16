@@ -52,6 +52,16 @@ button {
     border-radius: 15px;
 }
 
+.Cancled_top{
+    transform: rotate(45deg);
+    position: relative;
+    top:12px;
+}
+
+.Cancled_bottom{
+    transform: rotate(-45deg);
+}
+
 body {
     margin: 50px;
     color: #333;

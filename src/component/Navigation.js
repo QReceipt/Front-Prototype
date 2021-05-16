@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './Navigation.css';
 import styled from 'styled-components';
 import {Link} from "react-router-dom"
@@ -19,16 +19,17 @@ let Ul = styled.ul `
     top:0;
 `;
 
-let H3 = styled.h3`
+let H3 = styled.h3 `
     margin-top:0;
     margin-bottom:20px;
     padding:0;
 `;
 
 function Navigation() {
+    const {on, toggle} = useToggle();
+
     return (
         <NaviBody>
-            <Sidebar/>
             <Ul>
                 <li className="navLi" role="presentation">
                     <Link className="plusFun" to="/">메인</Link>
@@ -41,15 +42,19 @@ function Navigation() {
                     <Link className="plusFun" to="/signup">회원가입</Link>
                 </li>
             </Ul>
-            <button id="menubar">
-                <div className="hambuger"></div>
-                <div className="hambuger"></div>
-                <div className="hambuger"></div>
-            </button>
+
+            <button id="menubar" onClick={toggle}>{on?<Hambuger /> : <Cancled/>}</button>
+        
         </NaviBody>
 
     )
 }
+
+function useToggle(initialOn = false) {
+    const [on, setOn] = useState(initialOn)
+    const toggle = () => setOn(!on)
+    return {on, toggle}
+  }
 
 function Sidebar() {
     return (
@@ -70,6 +75,25 @@ function Sidebar() {
         </div>
     );
 
+}
+
+function Hambuger() {
+    return (
+        <div>
+            <div className="hambuger"></div>
+            <div className="hambuger"></div>
+            <div className="hambuger"></div></div>
+    );
+}
+
+function Cancled(){
+    return(
+    <div>
+    <div className="hambuger Cancled_top"></div>
+    <div className="hambuger Cancled_bottom"></div>
+    
+    <Sidebar/>
+    </div>)
 }
 
 export default Navigation;
