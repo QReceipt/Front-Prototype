@@ -13,7 +13,7 @@ let Ended = styled.div `
 let Text = styled.div `
     font-size:130%;
     padding:0;
-    z-index: 30;
+    z-index: 10;
 `;
 
 let Td = styled.td `

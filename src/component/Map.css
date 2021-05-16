@@ -1,0 +1,12 @@
+#Map{
+    height : 400px;
+}
+
+@media screen and (max-size:1000px) {
+    #Map{
+        width : 80%;
+        height : 40%;
+        padding : 0;
+        margin : 0;
+    }
+}
