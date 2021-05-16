@@ -2,6 +2,10 @@
     height : 400px;
 }
 
+.Title {
+    font-size: 300%;
+}
+
 @media screen and (max-size:1000px) {
     #Map{
         width : 80%;

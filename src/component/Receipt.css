@@ -75,3 +75,14 @@ h1{
 .titleSt{
     margin-bottom: 0;
 }
+
+#gpsImg{
+    width : 50px;
+    height : 50px;
+    display: inline;
+}
+#receiptTitle{
+    display: inline;
+    font-size : 350%;
+    margin-block: 3%;
+}

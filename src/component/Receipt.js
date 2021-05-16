@@ -1,6 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import styled from 'styled-components';
 import './Receipt.css';
+import gps from './Img/gps.png';
+import {Link} from "react-router-dom"
 import axios from 'axios';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
@@ -14,6 +16,10 @@ let Text = styled.div `
     font-size:130%;
     padding:0;
     z-index: 10;
+`;
+
+let Title = styled.div `
+    display:inline;
 `;
 
 let Td = styled.td `
@@ -31,11 +37,11 @@ function Receipt(props) {
         <div className="frame">
             {
                 componentForm === "1"
-                    ? <ReceiptForm />
+                    ? <ReceiptForm/>
                     : (
                         componentForm === "2"
                             ? <LoginForm/>
-                            : <Register />
+                            : <Register/>
                     )
             }
         </div>
@@ -84,7 +90,11 @@ function ReceiptForm(props) {
                 <br/>주문번호 : {props.orderNum}</Text>
         </Ended>
         <div className="mt-0">
-            <h1 className="display-4">{props.offerName}</h1>
+            <Title>
+                {/* <h1 className="display-4">{props.offerName}</h1> */}
+                <h1 id="receiptTitle" className="display-4">주단태</h1>
+                <Link to="/map"><img id="gpsImg" src={gps} alt='gps'/></Link>
+            </Title>
             <Text>공급자등록번호 : {props.offerNum}
                 <br/>
                 대표번호 : {props.offerPhoneNum}
@@ -215,9 +225,13 @@ function Register() {
                             <Td className="col-4">전화번호</Td>
                             <Td className="col-8 text-center">
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span> - </span>
+                                <span>
+                                    -
+                                </span>
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span> - </span>
+                                <span>
+                                    -
+                                </span>
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
                             </Td>
                         </tr>
@@ -225,10 +239,11 @@ function Register() {
 
                 </table>
                 <div className="row">
-                <input
-                    className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
-                    type="button"
-                    value="회원가입"></input></div>
+                    <input
+                        className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
+                        type="button"
+                        value="회원가입"></input>
+                </div>
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import Register from "./component/SignUp";
 import Main from "./component/Main";
 import Detail from "./component/Detail";
 import Navigation from "./component/Navigation";
+import SeeAll from "./component/SeeAll";
 import Map from "./component/Map";
 import {HashRouter, Route} from "react-router-dom";
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <Route path="/" exact={true} component={Main}/>
     <Route path="/signup" component={Register}/>
     <Route path="/detail" component={Detail}/>
+    <Route path="/list" component={SeeAll}/>
     <Route path="/map" component={Map}/>
   </div>
   </HashRouter>
