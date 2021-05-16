@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import Receipt from "./Receipt"
 import "./Detail.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
     padding-top:78px;
+    margin : 3%;
 `;
 
 let Dl = styled.dl`

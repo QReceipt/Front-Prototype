@@ -63,6 +63,10 @@ button {
     transform: rotate(-45deg);
 }
 
+.buttonBody{
+    margin-left: 25px;
+}
+
 body {
     margin: 50px;
     color: #333;

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import styled from 'styled-components';
 import './Receipt.css';
+import axios from 'axios';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 let Ended = styled.div `
     display:block;
@@ -28,11 +30,11 @@ function Receipt(props) {
         <div className="frame">
             {
                 componentForm === "1"
-                    ? receiptForm(props)
+                    ? <ReceiptForm />
                     : (
                         componentForm === "2"
-                            ? loginForm(props)
-                            : Register(props)
+                            ? <LoginForm/>
+                            : <Register />
                     )
             }
         </div>
@@ -74,7 +76,7 @@ function renderItem(item) {
     return <Menu key={item.id} menu={item.menu} cnt={item.cnt} won={item.won}/>
 }
 
-function receiptForm(props) {
+function ReceiptForm(props) {
     return <div>
         <Ended className="box row">
             <Text className="col-lg-9">주문일시 : {props.orderDay}
@@ -113,17 +115,27 @@ function receiptForm(props) {
     </div>
 }
 
-function loginForm(props) {
+function Menu({menu, cnt, won}) {
+    return (
+        <tr>
+            <Td className="col-6">{menu}</Td>
+            <Td className="col-3 text-center">{cnt}</Td>
+            <Td className="col-3 text-center">{won}</Td>
+        </tr>
+    )
+}
+
+function LoginForm(props) {
     return <div>
         <Ended className="box row">
             <Text className="col-lg-9 pl-0 my-2">QReceipt</Text>
         </Ended>
         <div className="mt-0">
-            <h1 className="display-4 mt-2 mb-4">LOGIN</h1>
+            <h1 className="titleSt display-2 mt-2 display-3">LOGIN</h1>
             <table className="table">
                 <thead>
                     <tr>
-                        <Th colSpan="2" className="col-12">로그인하기</Th>
+                        <Th colSpan="2" className="subTitle col-12">로그인하기</Th>
                     </tr>
                 </thead>
                 <tbody>
@@ -169,28 +181,18 @@ function loginForm(props) {
     </div>
 }
 
-function Menu({menu, cnt, won}) {
-    return (
-        <tr>
-            <Td className="col-6">{menu}</Td>
-            <Td className="col-3 text-center">{cnt}</Td>
-            <Td className="col-3 text-center">{won}</Td>
-        </tr>
-    )
-}
-
 function Register() {
     return (
         <div className="container-fulid">
-            <Ended className="box row">
-                <Text className="col-lg-9 pl-0 my-2">QReceipt</Text>
+            <Ended className="box row align-self-center">
+                <Text className="col-12 pl-0 my-2">QReceipt</Text>
             </Ended>
             <div className="mt-0">
-                <h1 className="display-4 mt-2 mb-4">Register</h1>
+                <h1 className="titleSt display-2 mt-2 display-3">Register</h1>
                 <table className="table">
                     <thead>
                         <tr>
-                            <Th colSpan="2" className="col-12">회원가입하기</Th>
+                            <Th colSpan="2" className="subTitle col-12">회원가입하기</Th>
                         </tr>
                     </thead>
                     <tbody>
@@ -216,20 +218,20 @@ function Register() {
                             <Td className="col-4">전화번호</Td>
                             <Td className="col-8 text-center">
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span>-</span>
+                                <span> - </span>
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span>-</span>
+                                <span> - </span>
                                 <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
                             </Td>
                         </tr>
                     </tbody>
 
                 </table>
-                <div>
+                <div className="row">
                 <input
-                    className="loginBtn btn btn-dark btn-lg rounded-pill"
+                    className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
                     type="button"
-                    value="로그인"></input></div>
+                    value="회원가입"></input></div>
             </div>
         </div>
     )

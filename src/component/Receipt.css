@@ -52,5 +52,24 @@
 
 .tel{
     display: inline;
-    width:32%;
+    width:28%;
+}
+
+h1{
+    font-family: 'Cafe24Ohsquare';
+}
+
+.signUpBtn{
+    position:relative;
+    font-size : 130%;
+    margin-bottom: 3%;
+}
+
+.subTitle{
+    font-weight : bolder;
+    font-size : 140%;
+}
+
+.titleSt{
+    margin-bottom: 0;
 }

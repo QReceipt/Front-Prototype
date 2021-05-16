@@ -21,6 +21,7 @@ let Ul = styled.ul `
 
 let H3 = styled.h3 `
     margin-top:0;
+    font-size : 150%;
     margin-bottom:20px;
     padding:0;
 `;
@@ -43,8 +44,12 @@ function Navigation() {
                 </li>
             </Ul>
 
-            <button id="menubar" onClick={toggle}>{on?<Hambuger /> : <Cancled/>}</button>
-        
+            <button id="menubar" onClick={toggle}>{
+                    on
+                        ? <Hambuger/>
+                        : <Cancled/>
+                }</button>
+
         </NaviBody>
 
     )
@@ -54,7 +59,7 @@ function useToggle(initialOn = false) {
     const [on, setOn] = useState(initialOn)
     const toggle = () => setOn(!on)
     return {on, toggle}
-  }
+}
 
 function Sidebar() {
     return (
@@ -79,21 +84,23 @@ function Sidebar() {
 
 function Hambuger() {
     return (
-        <div>
+        <div className="buttonBody">
             <div className="hambuger"></div>
             <div className="hambuger"></div>
-            <div className="hambuger"></div></div>
+            <div className="hambuger"></div>
+        </div>
     );
 }
 
-function Cancled(){
-    return(
-    <div>
-    <div className="hambuger Cancled_top"></div>
-    <div className="hambuger Cancled_bottom"></div>
-    
-    <Sidebar/>
-    </div>)
+function Cancled() {
+    return (
+        <div className="buttonBody">
+            <div className="hambuger Cancled_top"></div>
+            <div className="hambuger Cancled_bottom"></div>
+
+            <Sidebar/>
+        </div>
+    )
 }
 
 export default Navigation;

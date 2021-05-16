@@ -12,8 +12,10 @@ let LoginForm = styled.div `
 `;
 
 let Title = styled.div `
-    margin : 2%;
+    margin-inline : 0;
+    margin-block : 2%;
     font-size : 400%;
+    font-family: 'Cafe24Ohsquare';
 `;
 
 let Body = styled.div`
@@ -26,9 +28,9 @@ function SignUp() {
     
     return (
         <DetailBody className="container-fulid">
-            <Body>
-                <Title className="row">회원가입</Title>
-                <LoginForm  className="classBody row text-center">
+            <Body className="row">
+                <Title  className="col-12 display-2">회원가입</Title>
+                <LoginForm  className="classBody col-md-4">
                     <Receipt id="Receipt" form="3"/>
                 </LoginForm>
             </Body>
