@@ -1,18 +1,23 @@
-.plusFun {
-    font-size : 150%;
-    height:8%;
-    margin : 25px;
-    text-decoration: none;
-    color : black;
+button {
+    background-color: #fff;
+    border: none;
 }
 
-.plusFun:before { 
+.plusFun {
+    font-size: 150%;
+    height: 8%;
+    margin: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.plusFun:before {
     transform: scaleX(0);
     transform-origin: bottom right;
 }
 
-.plusFun:hover{
-    color : black;
+.plusFun:hover {
+    color: black;
     text-decoration: none;
 }
 
@@ -34,38 +39,88 @@
     transition: transform 0.3s ease;
 }
 
-#menubar{
-    margin : 3%;
+#menubar {
+    margin-top: 3%;
+    margin-left: 0;
 }
 
 .hambuger {
-    margin-block : 3px;
-    width : 40px;
-    height : 9px;
+    margin-block: 3px;
+    width: 40px;
+    height: 9px;
     background-color: hsl(200 100% 80%);
     border-radius: 15px;
 }
 
-@media (min-width : 1000px){
-    .navLi{
-        margin-block:50px;
+body {
+    margin: 50px;
+    color: #333;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.talkbubble {
+    position: absolute;
+    top: 100px;
+    width: 280px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid hsl(200 100% 80%);
+    background: hsl(200 100% 80%);
+}
+
+.talkbubble>ul{
+    list-style: none;
+    padding: 0;
+}
+.talkbubble>ul>sli{
+    margin-bottom : 20px;
+}
+
+.talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+
+    border-top: 13px solid transparent;
+    border-right: 26px solid hsl(200 100% 80%);
+    border-bottom: 13px solid transparent;
+}
+
+.plusFunS{
+    text-decoration: none;
+    font-size:110%;
+}
+
+.plusFunS:hover{
+    text-decoration: none;
+    font-size:200%;
+}
+
+@media (min-width : 1000px) {
+    .navLi {
+        margin-block: 50px;
         display: inline;
     }
 
-    #menubar{
-        display : none;
+    #menubar {
+        display: none;
     }
 }
 
-@media (max-width : 1000px){
-    .navLi{
-        margin-block:50px;
+@media (max-width : 1000px) {
+    .navLi {
+        margin-block: 50px;
         display: block;
-        display : none;
+        display: none;
     }
-    #menubar{
+    #menubar {
         position: absolute;
-        top : 0;
-        left : 0;
+        top: 0;
+        left: 0;
     }
 }
