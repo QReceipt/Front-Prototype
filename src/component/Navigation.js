@@ -43,7 +43,9 @@ function Navigation() {
                 <li className="navLi" role="presentation">
                     <Link className="plusFun active" to="/Detail">영수증 상세보기</Link>
                 </li>
-                <li className="navLi plusFun" role="presentation">영수증 모아보기</li>
+                <li className="navLi" role="presentation"> 
+                <Link className="plusFun" to="/list">영수증 모아보기</Link>
+                </li>
                 <li className="navLi" role="presentation">
                     <Link className="plusFun" to="/signup">회원가입</Link>
                 </li>
@@ -70,7 +72,9 @@ function Sidebar() {
                 <li role="presentation">
                     <Link className="plusFunS active" to="/Detail">영수증 상세보기</Link>
                 </li>
-                <li className="navLi plusFunS" role="presentation">영수증 모아보기</li>
+                <li role="presentation"> 
+                    <Link className="plusFunS" to="/list">영수증 모아보기</Link>
+                </li>
                 <li role="presentation">
                     <Link className="plusFunS" to="/signup">회원가입</Link>
                 </li>

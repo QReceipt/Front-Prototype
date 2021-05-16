@@ -6,16 +6,12 @@ let DetailBody = styled.div `
     padding-top:78px;
 `;
 
-let List = styled.div `
-    float:left;
-`;
-
 function SeeAll() {
     var i = 0;
     var lists = [];
 
     while (i < 9) {
-        lists.push(<List>{i + 1}</List>);
+        lists.push(<li className = "date-ddlist">{i + 1}</li>);
         i += 1;
     }
     return (

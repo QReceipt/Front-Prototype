@@ -53,20 +53,30 @@
 
 .date-dd
 {
-  margin: 0 auto;
+  margin : 0 auto;
   list-style:none;
-  margin-top:30px;
+  margin-top:5%;
   padding-top:5%;
   width:77%;
   display:inline-flex;
   justify-content: space-between;
-  font-size:5rem;
 }
 
 .date-dd > li
 {
   display: block;
   float:left; 
-  font-size:50px;
+  font-size:5rem;
   color:#c0c0c0;
+}
+
+.date-dd > li:hover{
+  color : #DAED79;
+}
+
+@media (max-width:1000px) {
+.shop-name
+{
+  font-size:2rem;
+}
 }
