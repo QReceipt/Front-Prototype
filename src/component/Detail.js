@@ -1,24 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import Receipt from "./Receipt"
-import Navigation from "./Navigation"
 import "./Detail.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
     padding-top:78px;
+    margin : 3%;
 `;
 
 let Dl = styled.dl`
     font-size:120%;
-    paDding-block:3px;
+    padding-block:3px;
 `;
 
 let Dt = styled.dt`
     font-size:120%;
-    paDding-bottom:10px;
+    padding-bottom:10px;
 `;
 
-let Dd = styled.dd`
+let dd = styled.dd`
     font-size : 120%;
 `;
 
@@ -34,15 +34,12 @@ function Detail({
     var lists = [];
 
     while (i < 5) {
-        lists.push(<li>{i + 1}</li>);
+        lists.push(<li className="sideIndex">{i + 1}</li>);
         i += 1;
     }
 
     return (
         <DetailBody className="container-fulid">
-            <div className="menu row">
-                <Navigation className="col-12" />
-            </div>
             <div className="row text-center w-100 p-0 m-0">
                 <div className="col-xl-3">
                     <h1 className="Title">영수증 상세보기</h1>
@@ -52,33 +49,35 @@ function Detail({
                 </div>
 
                 <div className="receipt col-xl-4 col-md-7 align-self-center">
-                    <Receipt form="true"/>
+                <p>가게의 위치를 보고싶다면 가게명 옆의 아이콘을 클릭해보세요!</p>
+                    <Receipt form="1"/>
+
                 </div>
 
                 <div className="detailOption col-xl-auto col-md-5">
                     <Dl>
                         <Dt>배달 주소</Dt>
-                        <Dd>{address}</Dd>
+                        <dd>{address}</dd>
                     </Dl>
                     <Dl>
                         <Dt>연락처</Dt>
-                        <Dd>{phoneNum}</Dd>
+                        <dd>{phoneNum}</dd>
                     </Dl>
                     <Dl>
                         <Dt>가게 요청사항</Dt>
-                        <Dd>{shopOrder}</Dd>
+                        <dd>{shopOrder}</dd>
                     </Dl>
                     <Dl>
                         <Dt>배달 요청사항</Dt>
-                        <Dd>{deliveryOrder}</Dd>
+                        <dd>{deliveryOrder}</dd>
                     </Dl>
                     <Dl>
                         <Dt>수저/포크 유무</Dt>
-                        <Dd>{spoonCheck}</Dd>
+                        <dd>{spoonCheck}</dd>
                     </Dl>
                     <Dl>
                         <Dt>원산지 표시</Dt>
-                        <Dd>{origin}</Dd>
+                        <dd>{origin}</dd>
                     </Dl>
                 </div>
             </div>

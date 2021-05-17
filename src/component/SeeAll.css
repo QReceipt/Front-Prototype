@@ -1,0 +1,85 @@
+
+.receipt_table
+{
+  height: auto;
+  margin : 0 auto;
+  width : 70%;
+}
+
+.table-title
+{
+  border-top:1px solid rgb(224 224 224);
+  font-size:2rem;
+  height:40px;
+}
+
+.product-price{
+    padding-top: 10px;
+    font-size:2.5rem;
+    font-weight:bold;
+    text-align:right;
+    padding-right:5px;
+}
+
+.shop-name
+{
+  font-size:4rem;
+  font-weight:bold;
+  text-align:center;
+  padding-bottom: 15px;
+}
+
+.table-content{
+    font-size:2rem;
+    border-bottom:1px solid rgb(224 224 224);
+    height:70px;
+}
+
+.date-yymm
+{
+  width:150px;
+  height:150px;
+  text-align:center;
+  border-radius :50%;
+  background:#91BC54;
+  vertical-align:middle;
+  margin-top:70px;
+  color:white;
+}
+
+.date-yymm{
+    padding-top:30px;
+    margin : 0 auto;
+}
+
+.date-dd
+{
+  margin-left : 18%;
+  list-style:none;
+  padding-bottom: 3%;
+  display: flexbox;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width:77%;
+  display:inline-flex;
+  justify-content: space-between;
+}
+
+.date-dd > li
+{
+  display: block;
+  float:left; 
+  font-size:5rem;
+  color:#c0c0c0;
+}
+
+.date-dd > li:hover{
+  color : #DAED79;
+}
+
+@media (max-width:1000px) {
+.shop-name
+{
+  font-size:2rem;
+}
+}
