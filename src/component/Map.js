@@ -9,9 +9,8 @@ let MapBody = styled.div `
 `;
 
 function Map() {
-    const {kakao} = window;
-
     useEffect(() => {
+        const {kakao} = window;
         const container = document.getElementById("Map");
 
         const options = {

@@ -30,6 +30,9 @@ let Th = styled.td `
     font-size:130%;
 `;
 
+axios.defaults.baseURL = "http://mmyu.synology.me:8000/user/login";
+axios.defaults.withCredentials = true;
+
 function Receipt(props) {
     var componentForm = props.form;
 
@@ -84,46 +87,47 @@ function renderItem(item) {
 }
 
 function ReceiptForm(props) {
-    return <div>
-        <Ended className="box row">
-            <Text className="col-lg-9">주문일시 : {props.orderDay}
-                <br/>주문번호 : {props.orderNum}</Text>
-        </Ended>
-        <div className="mt-0">
-            <Title>
-                {/* <h1 className="display-4">{props.offerName}</h1> */}
-                <h1 id="receiptTitle" className="display-4">주단태</h1>
-                <Link to="/map"><img id="gpsImg" src={gps} alt='gps'/></Link>
-            </Title>
-            <Text>공급자등록번호 : {props.offerNum}
-                <br/>
-                대표번호 : {props.offerPhoneNum}
-            </Text>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <Th className="col-6">메뉴</Th>
-                        <Th className="col-3 text-center">수량</Th>
-                        <Th className="col-3 text-center">금액</Th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orderMenu.map(renderItem)}
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <Th className="col-9" colSpan="2">합계</Th>
-                        <Th className="col-3 text-center">{sumCnt(orderMenu)}</Th>
-                    </tr>
-                </tfoot>
-            </table>
+    return (
+        <div>
+            <Ended className="box row">
+                <Text className="col-lg-9">주문일시 : {props.orderDay}
+                    <br/>주문번호 : {props.orderNum}</Text>
+            </Ended>
+            <div className="mt-0">
+                <Title>
+                    <h1 id="receiptTitle" className="display-4">{props.offerName}</h1>
+                    <Link to="/map"><img id="gpsImg" src={gps} alt='gps'/></Link>
+                </Title>
+                <Text>공급자등록번호 : {props.offerNum}
+                    <br/>
+                    대표번호 : {props.offerPhoneNum}
+                </Text>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <Th className="col-6">메뉴</Th>
+                            <Th className="col-3 text-center">수량</Th>
+                            <Th className="col-3 text-center">금액</Th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orderMenu.map(renderItem)}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <Th className="col-9" colSpan="2">합계</Th>
+                            <Th className="col-3 text-center">{sumCnt(orderMenu)}</Th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <Ended>
+                <Text>결제일 : {props.checkDay}
+                    <br/>결제유무 : {props.check}
+                </Text>
+            </Ended>
         </div>
-        <Ended>
-            <Text>결제일 : {props.checkDay}
-                <br/>결제유무 : {props.check}
-            </Text>
-        </Ended>
-    </div>
+    )
 }
 
 function Menu({menu, cnt, won}) {
@@ -136,7 +140,20 @@ function Menu({menu, cnt, won}) {
     )
 }
 
-function LoginForm(props) {
+function LoginForm() {
+    const [id, setId] = useState("");
+    const [pw, setPw] = useState("");
+
+    const onChangeId = ((e) => {
+        console.log(id);
+        setId(e.target.value);
+    })
+
+    const onChangePw = ((e) => {
+        console.log(pw);
+        setPw(e.target.value);
+    })
+
     return <div>
         <Ended className="box row">
             <Text className="col-lg-9 pl-0 my-2">QReceipt</Text>
@@ -153,20 +170,38 @@ function LoginForm(props) {
                     <tr>
                         <Td className="col-3">아이디</Td>
                         <Td className="col-9 text-center">
-                            <input className="w-100 py-2 px-4 border rounded-pill"></input>
+                            <input
+                                onChange={onChangeId}
+                                value={id}
+                                className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
                     <tr>
                         <Td className="col-3">비밀번호</Td>
                         <Td className="col-9 text-center">
-                            <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
+                            <input
+                                onChange={onChangePw}
+                                value={pw}
+                                type="password"
+                                className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <Th colSpan="2" className="col-12 text-right">
+                            {/* networkError */}
                             <input
+                                onClick={()=>{axios({
+                                    method: 'post',
+                                    url: "http://mmyu.synology.me:8000/user/login",
+                                    data: {
+                                        email: id,
+                                        password: pw
+                                    }
+                                }).then((res) => {
+                                    console.log(res)
+                                })}}
                                 className="loginBtn btn btn-dark btn-lg rounded-pill"
                                 type="button"
                                 value="로그인"></input>
@@ -196,54 +231,56 @@ function Register() {
             </Ended>
             <div className="mt-0">
                 <h1 className="titleSt display-2 mt-2 display-3">Register</h1>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <Th colSpan="2" className="subTitle col-12">회원가입하기</Th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <Td className="col-4">아이디</Td>
-                            <Td className="col-8 text-center">
-                                <input className="w-100 py-2 px-4 border rounded-pill"></input>
-                            </Td>
-                        </tr>
-                        <tr>
-                            <Td className="col-4">비밀번호</Td>
-                            <Td className="col-8 text-center">
-                                <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
-                            </Td>
-                        </tr>
-                        <tr>
-                            <Td className="col-4">비밀번호 확인</Td>
-                            <Td className="col-8 text-center">
-                                <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
-                            </Td>
-                        </tr>
-                        <tr>
-                            <Td className="col-4">전화번호</Td>
-                            <Td className="col-8 text-center">
-                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span>
-                                    -
-                                </span>
-                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                                <span>
-                                    -
-                                </span>
-                                <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
-                            </Td>
-                        </tr>
-                    </tbody>
+                <form >
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <Th colSpan="2" className="subTitle col-12">회원가입하기</Th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <Td className="col-4">아이디</Td>
+                                <Td className="col-8 text-center">
+                                    <input className="w-100 py-2 px-4 border rounded-pill"></input>
+                                </Td>
+                            </tr>
+                            <tr>
+                                <Td className="col-4">비밀번호</Td>
+                                <Td className="col-8 text-center">
+                                    <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
+                                </Td>
+                            </tr>
+                            <tr>
+                                <Td className="col-4">비밀번호 확인</Td>
+                                <Td className="col-8 text-center">
+                                    <input type="password" className="w-100 py-2 px-4 border rounded-pill"></input>
+                                </Td>
+                            </tr>
+                            <tr>
+                                <Td className="col-4">전화번호</Td>
+                                <Td className="col-8 text-center">
+                                    <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                                    <span>
+                                        -
+                                    </span>
+                                    <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                                    <span>
+                                        -
+                                    </span>
+                                    <input type="tel" className="tel py-2 px-4 border rounded-pill"></input>
+                                </Td>
+                            </tr>
+                        </tbody>
 
-                </table>
-                <div className="row">
-                    <input
-                        className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
-                        type="button"
-                        value="회원가입"></input>
-                </div>
+                    </table>
+                    <div className="row">
+                        <input
+                            className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
+                            type="button"
+                            value="회원가입"></input>
+                    </div>
+                </form>
             </div>
         </div>
     )

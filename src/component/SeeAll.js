@@ -8,7 +8,7 @@ let DetailBody = styled.div `
     margin : 3%;
 `;
 
-let Td = styled.td`
+let Td = styled.td `
     font-size : 100%;
 `;
 
@@ -26,61 +26,62 @@ function SeeAll() {
                 <div className="col-xl-3">
                     <h1 className="Title">영수증 모아보기</h1>
                     <div className="col-12">
-                        <div class="date-yymm">
-                            <h5 class="date-yy">2021</h5>
-                            <p class="display-1">4</p>
+                        <div className="date-yymm">
+                            <h5 className="date-yy">2021</h5>
+                            <p className="display-1">4</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="receipt col-xl-9">
                     <div className="row">
-                        <div class="col-10">
-                            <ul class="date-dd">
+                        <div className="col-10">
+                            <ul className="date-dd">
                                 {lists}
                             </ul>
                         </div>
                     </div>
-                <div class="col-12">
-                    <table class="receipt_table">
-                        <tr class="table-title">
-                            <Td>00:00</Td>
-                            <Td>주문번호:BOWG009KTK</Td>
-                            <Td class="product-price">25,000</Td>
-                        </tr>
-                        <tr class="table-content">
-                            <Td class="shop-name">펜트하우스</Td>
-                            <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
-                            <Td>
-                                <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
-                            </Td>
-                        </tr>
-                        <tr class="table-title">
-                            <Td>00:00</Td>
-                            <Td>주문번호:BOWG009KTK</Td>
-                            <Td class="product-price">25,000</Td>
-                        </tr>
-                        <tr class="table-content">
-                            <Td class="shop-name">펜트하우스</Td>
-                            <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
-                            <Td>
-                                <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
-                            </Td>
-                        </tr>
-                        <tr class="table-title">
-                            <Td>00:00</Td>
-                            <Td>주문번호:BOWG009KTK</Td>
-                            <Td class="product-price">25,000</Td>
-                        </tr>
-                        <tr class="table-content">
-                            <Td class="shop-name">펜트하우스</Td>
-                            <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
-                            <Td>
-                                <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
-                            </Td>
-                        </tr>
-                    </table>
-                </div></div>
+                    <div className="col-12">
+                        <table className="receipt_table">
+                            <tr className="table-title">
+                                <Td>00:00</Td>
+                                <Td>주문번호:BOWG009KTK</Td>
+                                <Td className="product-price">25,000</Td>
+                            </tr>
+                            <tr className="table-content">
+                                <Td className="shop-name">펜트하우스</Td>
+                                <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
+                                <Td>
+                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                </Td>
+                            </tr>
+                            <tr className="table-title">
+                                <Td>00:00</Td>
+                                <Td>주문번호:BOWG009KTK</Td>
+                                <Td className="product-price">25,000</Td>
+                            </tr>
+                            <tr className="table-content">
+                                <Td className="shop-name">펜트하우스</Td>
+                                <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
+                                <Td>
+                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                </Td>
+                            </tr>
+                            <tr className="table-title">
+                                <Td>00:00</Td>
+                                <Td>주문번호:BOWG009KTK</Td>
+                                <Td className="product-price">25,000</Td>
+                            </tr>
+                            <tr className="table-content">
+                                <Td className="shop-name">펜트하우스</Td>
+                                <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
+                                <Td>
+                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                </Td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </DetailBody>
     );
