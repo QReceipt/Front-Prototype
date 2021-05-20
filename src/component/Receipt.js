@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import './Receipt.css';
 import gps from './Img/gps.png';
 import {Link} from "react-router-dom"
-import {onLoginAPI} from '../api/User';
+import {isEmail, onLoginAPI} from '../api/User';
 
 const Ended = styled.div `
     display:block;
@@ -140,26 +140,38 @@ function LoginForm() {
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
 
-    const onChangeId = ((e) => {
-        console.log(id);
+    const onChangeId = (e) => {
         setId(e.target.value);
-    })
+    }
 
-    const onChangePw = ((e) => {
-        console.log(pw);
+    const onChangePw = (e) => {
         setPw(e.target.value);
-    })
+    }
 
     //axios 헤더, 베이스 헤더 import 프로미스 객체로 사용 프로미스 객체를 반환했을 때 기다려줌(비동기 처리)
     const onLogin = async () => {
-        // 이메일 형식 체크
-
-        const res = await onLoginAPI(id,pw);
-
-        if (res) {
-            console.log(res);
+        if (id === "" && pw === "") {
+            alert("아이디와 비밀번호를 입력하세요");
+        } else if (id !== "" && pw === "") {
+            alert("비밀번호를 입력하세요");
+        } else if (id === "" && pw !== "") {
+            alert("아이디를 입력하세요");
         } else {
-            console.log("HELP ME");
+            // 이메일 형식 체크
+            const checkEmail = isEmail(id);
+
+            if (!checkEmail) {
+                alert("아이디 형식이 잘못되었습니다")
+            }
+
+            const res = await onLoginAPI(id, pw);
+
+            if (res) {
+                console.log(res);
+            } else {
+                console.log("HELP ME");
+            }
+
         }
     };
 
@@ -182,6 +194,7 @@ function LoginForm() {
                             <input
                                 onChange={onChangeId}
                                 value={id}
+                                placeholder="이메일을 입력하세요"
                                 className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
                     </tr>
@@ -191,6 +204,7 @@ function LoginForm() {
                             <input
                                 onChange={onChangePw}
                                 value={pw}
+                                placeholder="비밀번호를 입력하세요"
                                 type="password"
                                 className="w-100 py-2 px-4 border rounded-pill"></input>
                         </Td>
