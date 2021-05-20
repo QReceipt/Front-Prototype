@@ -1,37 +1,33 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import styled from 'styled-components';
 import './Receipt.css';
 import gps from './Img/gps.png';
 import {Link} from "react-router-dom"
-import axios from 'axios';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import {onLoginAPI} from '../api/User';
 
-let Ended = styled.div `
+const Ended = styled.div `
     display:block;
     margin : 0;
     padding : 0;
 `;
 
-let Text = styled.div `
+const Text = styled.div `
     font-size:130%;
     padding:0;
     z-index: 10;
 `;
 
-let Title = styled.div `
+const Title = styled.div `
     display:inline;
 `;
 
-let Td = styled.td `
+const Td = styled.td `
     font-size:130%;
 `;
 
-let Th = styled.td `
+const Th = styled.td `
     font-size:130%;
 `;
-
-axios.defaults.baseURL = "http://mmyu.synology.me:8000/user/login";
-axios.defaults.withCredentials = true;
 
 function Receipt(props) {
     var componentForm = props.form;
@@ -154,6 +150,19 @@ function LoginForm() {
         setPw(e.target.value);
     })
 
+    //axios 헤더, 베이스 헤더 import 프로미스 객체로 사용 프로미스 객체를 반환했을 때 기다려줌(비동기 처리)
+    const onLogin = async () => {
+        // 이메일 형식 체크
+
+        const res = await onLoginAPI(id,pw);
+
+        if (res) {
+            console.log(res);
+        } else {
+            console.log("HELP ME");
+        }
+    };
+
     return <div>
         <Ended className="box row">
             <Text className="col-lg-9 pl-0 my-2">QReceipt</Text>
@@ -190,18 +199,8 @@ function LoginForm() {
                 <tfoot>
                     <tr>
                         <Th colSpan="2" className="col-12 text-right">
-                            {/* networkError */}
                             <input
-                                onClick={()=>{axios({
-                                    method: 'post',
-                                    url: "http://mmyu.synology.me:8000/user/login",
-                                    data: {
-                                        email: id,
-                                        password: pw
-                                    }
-                                }).then((res) => {
-                                    console.log(res)
-                                })}}
+                                onClick={onLogin}
                                 className="loginBtn btn btn-dark btn-lg rounded-pill"
                                 type="button"
                                 value="로그인"></input>
