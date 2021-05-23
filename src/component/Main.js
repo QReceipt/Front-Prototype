@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Receipt from "./Receipt"
+import Login from "./LoginForm"
 import "./Main.css"
 import styled from 'styled-components'
 
@@ -33,7 +33,7 @@ function Main() {
             <Body className="row">
                 <Title className="col-md-12 display-2">QReceipt</Title>
                 <LoginForm className="classBody col-lg-4">
-                    <Receipt id="Receipt" form="2"/>
+                    <Login id="Receipt"/>
                 </LoginForm>
             </Body>
         </DetailBody>

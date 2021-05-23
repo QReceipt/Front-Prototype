@@ -1,5 +1,5 @@
 import React from "react";
-import Receipt from "./Receipt"
+import Reg from "./Register"
 import "./Main.css"
 import styled from 'styled-components'
 
@@ -31,7 +31,7 @@ function SignUp() {
             <Body className="row">
                 <Title  className="col-12 display-2">회원가입</Title>
                 <LoginForm  className="classBody col-md-4">
-                    <Receipt id="Receipt" form="3"/>
+                    <Reg id="Receipt" form="3"/>
                 </LoginForm>
             </Body>
         </DetailBody>
