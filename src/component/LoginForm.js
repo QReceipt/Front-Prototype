@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
 import './Receipt.css';
-import {isEmail, checkPassword, onLoginAPI, onRegAPI} from '../api/User';
+import {isEmail, onLoginAPI} from '../api/User';
 
 const Ended = styled.div `
     display:block;
@@ -13,10 +13,6 @@ const Text = styled.div `
     font-size:130%;
     padding:0;
     z-index: 10;
-`;
-
-const Title = styled.div `
-    display:inline;
 `;
 
 const Td = styled.td `
@@ -66,7 +62,7 @@ function Login() {
             const res = await onLoginAPI(id, pw);
 
             if (res) {
-                console.log(res);
+                console.log("SUCCESS");
             } else {
                 console.log("HELP ME");
             }

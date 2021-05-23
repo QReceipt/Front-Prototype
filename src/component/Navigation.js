@@ -40,9 +40,6 @@ function Navigation() {
                 <li className="navLi" role="presentation">
                     <Link className="plusFun" to="/">메인</Link>
                 </li>
-                <li className="navLi" role="presentation">
-                    <Link className="plusFun active" to="/Detail">영수증 상세보기</Link>
-                </li>
                 <li className="navLi" role="presentation"> 
                 <Link className="plusFun" to="/list">영수증 모아보기</Link>
                 </li>

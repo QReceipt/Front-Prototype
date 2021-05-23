@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
 import './Receipt.css';
-import gps from './Img/gps.png';
-import {Link} from "react-router-dom"
-import {isEmail, checkPassword, onLoginAPI, onRegAPI} from '../api/User';
+import {isEmail, checkPassword, onRegAPI} from '../api/User';
 
 const Ended = styled.div `
     display:block;

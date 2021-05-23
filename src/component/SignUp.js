@@ -13,7 +13,7 @@ let LoginForm = styled.div `
 
 let Title = styled.div `
     margin-inline : 0;
-    margin-block : 2%;
+    margin-top : 2%;
     font-size : 400%;
     font-family: 'Cafe24Ohsquare';
 `;

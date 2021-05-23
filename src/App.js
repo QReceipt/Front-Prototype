@@ -9,7 +9,7 @@ import {HashRouter, Route} from "react-router-dom";
 import axios from 'axios';
 import styled from 'styled-components';
 
-axios.defaults.baseURL = "http://mmyu.synology.me:8000/";
+axios.defaults.baseURL = "http://mmyu.synology.me:8080/";
 axios.defaults.withCredentials = true;
 
 const Navi = styled.div`

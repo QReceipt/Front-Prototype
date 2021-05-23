@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import Receipt from "./Receipt"
 import "./SeeAll.css"
 import styled from 'styled-components'
+import {Link} from "react-router-dom"
 
 let DetailBody = styled.div `
     padding-top:78px;
@@ -52,7 +52,7 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
                                 </Td>
                             </tr>
                             <tr className="table-title">
@@ -64,7 +64,7 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
                                 </Td>
                             </tr>
                             <tr className="table-title">
@@ -76,7 +76,7 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-dark btn-lg rounded-pill" type="button">더보기</button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
                                 </Td>
                             </tr>
                         </table>

@@ -71,6 +71,16 @@
     color: #DAED79;
 }
 
+.btnTypo{
+    text-decoration: none;
+    color :green
+}
+
+.btnTypo:hover{
+    text-decoration: none;
+    color : white;
+}
+
 @media (max-width:1000px) {
     .shop-name {
         font-size: 2rem;
