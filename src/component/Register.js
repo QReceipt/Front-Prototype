@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, checkPassword, onRegAPI} from '../api/User';
-import Modal from './Modal'
 
 const Ended = styled.div `
     display:block;
@@ -48,16 +47,6 @@ function RegisterForm() {
     const [phoneNum3, setPhoneNum3] = useState("");
     const [phoneNum, setPhoneNum] = useState("");
     const [userCat, setUserCat] = useState("");
-
-    const [modalOpen,setModalOpen] = useState(false);
-
-    const openModal = () =>{
-        setModalOpen(true);
-    }
-
-    const closeModal = ()=>{
-        setModalOpen(false);
-    }
 
     const onChangePw = (e) => {
         setPw(e.target.value);
@@ -124,7 +113,6 @@ function RegisterForm() {
 
             if (res) {
                 alert("회원가입에 성공했습니다.");
-                openModal();
             } else {
                 console.log("HELP ME");
             }
@@ -251,10 +239,6 @@ function RegisterForm() {
                         className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
                         type="button"
                         value="회원가입"></input>
-
-                    <Modal open={modalOpen} close={closeModal} header="REG ENDING">
-                        ㅁaaaa
-                    </Modal>
                 </div>
             </div>
         </div>

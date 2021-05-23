@@ -31,15 +31,23 @@ function Map() {
                 <div className="receipt col-xl-4 col-md-12 align-self-center">
                     <h1 className="Title">가게 지도 보기</h1>
                     <Receipt form="1"/>
-                    <Link className="plusFun active" to="/Detail">
+                    <Link className="active" to="/Detail">
                         <input
-                            className="backBtn col-4 mt-3 display-3 btn btn-dark btn-lg rounded-pill"
+                            className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
                             type="button"
                             value="이전화면으로 돌아가기"></input>
                     </Link>
                 </div>
 
-                <div id="Map" className="col-xl-8 col-12"/>
+                <div className="col-xl-8 col-md-12">
+                    <div id="Map" className="w-100 h-100"/>
+                <Link className="Navi active" to="/Detail">
+                        <input
+                            className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
+                            type="button"
+                            value="길 안내하기"></input>
+                    </Link>
+                </div>
             </div>
         </MapBody>
     );
