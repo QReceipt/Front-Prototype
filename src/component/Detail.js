@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Receipt from "./Receipt"
-import "./Detail.css"
+import "./CSS/Detail.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `

@@ -1,6 +1,6 @@
 import React from "react";
 import Reg from "./Register"
-import "./Main.css"
+import "./CSS/Main.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `

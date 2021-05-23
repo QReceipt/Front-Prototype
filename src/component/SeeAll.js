@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./SeeAll.css"
+import "./CSS/SeeAll.css"
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
 

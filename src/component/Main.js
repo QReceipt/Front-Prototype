@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Login from "./LoginForm"
-import "./Main.css"
+import "./CSS/Main.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `

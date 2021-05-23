@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
-import './Receipt.css';
+import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
 
 const Ended = styled.div `

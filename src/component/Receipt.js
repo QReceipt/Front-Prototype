@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import styled from 'styled-components';
-import './Receipt.css';
+import './CSS/Receipt.css';
 import gps from './Img/gps.png';
 import {Link} from "react-router-dom"
 import {onReceiptAPI} from '../api/ReceiptInfo';

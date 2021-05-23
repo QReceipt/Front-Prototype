@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
-import './Receipt.css';
+import './CSS/Receipt.css';
 import {isEmail, checkPassword, onRegAPI} from '../api/User';
+import Modal from './Modal'
 
 const Ended = styled.div `
     display:block;
@@ -28,11 +29,9 @@ const Th = styled.td `
 `;
 
 function Register(props) {
-    return (
-        <div className="frame">
-            <RegisterForm/>
-        </div>
-    )
+    return (<div className="frame">
+        <RegisterForm/>
+    </div>)
 }
 
 export default Register;
@@ -49,6 +48,16 @@ function RegisterForm() {
     const [phoneNum3, setPhoneNum3] = useState("");
     const [phoneNum, setPhoneNum] = useState("");
     const [userCat, setUserCat] = useState("");
+
+    const [modalOpen,setModalOpen] = useState(false);
+
+    const openModal = () =>{
+        setModalOpen(true);
+    }
+
+    const closeModal = ()=>{
+        setModalOpen(false);
+    }
 
     const onChangePw = (e) => {
         setPw(e.target.value);
@@ -90,6 +99,7 @@ function RegisterForm() {
     }
 
     const onChangeUseCat = (e) => {
+        console.log(e.target.value);
         setUserCat(e.target.value);
     }
 
@@ -113,11 +123,11 @@ function RegisterForm() {
             const res = await onRegAPI(pw, name, email, add1, add2, Num, userCat);
 
             if (res) {
-                console.log(res);
+                alert("회원가입에 성공했습니다.");
+                openModal();
             } else {
                 console.log("HELP ME");
             }
-
         }
     };
 
@@ -128,123 +138,124 @@ function RegisterForm() {
             </Ended>
             <div className="mt-0">
                 <h1 className="titleSt display-2 mt-2 display-3">Register</h1>
-                <form >
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <Th colSpan="2" className="subTitle col-12">회원가입하기</Th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <Td className="col-4">이메일</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onChangeEmail}
-                                        value={email}
-                                        type="email"
-                                        placeholder="예) chein2021@naver.com"
-                                        className="w-100 py-2 px-4 border rounded-pill"></input>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">이름</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onChangeName}
-                                        value={name}
-                                        type="name"
-                                        placeholder="예) 이수민"
-                                        className="w-100 py-2 px-4 border rounded-pill"></input>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">비밀번호</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onChangePw}
-                                        value={pw}
-                                        type="password"
-                                        className="w-100 py-2 px-4 border rounded-pill"></input>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">비밀번호 확인</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onpwCheck}
-                                        value={pwCheck}
-                                        type="password"
-                                        className="w-100 py-2 px-4 border rounded-pill"></input>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">주소</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onChangeAdd1}
-                                        value={add1}
-                                        type="address"
-                                        placeholder="시, 군, 구, 동"
-                                        className="w-100 py-2 px-4 border rounded-pill"/>
-                                    <input
-                                        onChange={onChangeAdd2}
-                                        value={add2}
-                                        type="address"
-                                        placeholder="상세 주소"
-                                        className="w-100 py-2 px-4 border rounded-pill"/>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">전화번호</Td>
-                                <Td className="col-8 text-center">
-                                    <input
-                                        onChange={onChangePhoneNum1}
-                                        value={phoneNum1}
-                                        type="tel"
-                                        className="tel py-2 px-4 border rounded-pill"></input>
-                                    <span>
-                                        -
-                                    </span>
-                                    <input
-                                        onChange={onChangePhoneNum2}
-                                        value={phoneNum2}
-                                        type="tel"
-                                        className="tel py-2 px-4 border rounded-pill"></input>
-                                    <span>
-                                        -
-                                    </span>
-                                    <input
-                                        onChange={onChangePhoneNum3}
-                                        value={phoneNum3}
-                                        type="tel"
-                                        className="tel py-2 px-4 border rounded-pill"></input>
-                                </Td>
-                            </tr>
-                            <tr>
-                                <Td className="col-4">유형 선택</Td>
-                                <Td className="col-8 text-center">
-                                    <select
-                                        onChange={onChangeUseCat}
-                                        value={userCat}
-                                        className="w-100 py-2 px-4 border rounded-pill">
-                                        <option value="guest">손님</option>
-                                        <option value="seller">점주</option>
-                                        <option value="deliver">배달원</option>
-                                    </select>
-                                </Td>
-                            </tr>
-                        </tbody>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <Th colSpan="2" className="subTitle col-12">회원가입하기</Th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <Td className="col-4">이메일</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onChangeEmail}
+                                    value={email}
+                                    type="email"
+                                    placeholder="예) chein2021@naver.com"
+                                    className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">이름</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onChangeName}
+                                    value={name}
+                                    type="name"
+                                    placeholder="예) 이수민"
+                                    className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">비밀번호</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onChangePw}
+                                    value={pw}
+                                    type="password"
+                                    className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">비밀번호 확인</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onpwCheck}
+                                    value={pwCheck}
+                                    type="password"
+                                    className="w-100 py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">주소</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onChangeAdd1}
+                                    value={add1}
+                                    type="address"
+                                    placeholder="시, 군, 구, 동"
+                                    className="w-100 py-2 px-4 border rounded-pill"/>
+                                <input
+                                    onChange={onChangeAdd2}
+                                    value={add2}
+                                    type="address"
+                                    placeholder="상세 주소"
+                                    className="w-100 py-2 px-4 border rounded-pill"/>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">전화번호</Td>
+                            <Td className="col-8 text-center">
+                                <input
+                                    onChange={onChangePhoneNum1}
+                                    value={phoneNum1}
+                                    type="tel"
+                                    className="tel py-2 px-4 border rounded-pill"></input>
+                                <span>
+                                    -
+                                </span>
+                                <input
+                                    onChange={onChangePhoneNum2}
+                                    value={phoneNum2}
+                                    type="tel"
+                                    className="tel py-2 px-4 border rounded-pill"></input>
+                                <span>
+                                    -
+                                </span>
+                                <input
+                                    onChange={onChangePhoneNum3}
+                                    value={phoneNum3}
+                                    type="tel"
+                                    className="tel py-2 px-4 border rounded-pill"></input>
+                            </Td>
+                        </tr>
+                        <tr>
+                            <Td className="col-4">유형 선택</Td>
+                            <Td className="col-8 text-center">
+                                <select
+                                    onChange={onChangeUseCat}
+                                    className="w-100 py-2 px-4 border rounded-pill">
+                                    <option value="손님">손님</option>
+                                    <option value="점주">점주</option>
+                                    <option value="배달원">배달원</option>
+                                </select>
+                            </Td>
+                        </tr>
+                    </tbody>
 
-                    </table>
-                    <div className="row">
-                        <input
-                            onClick={onReg}
-                            className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
-                            type="button"
-                            value="회원가입"></input>
-                    </div>
-                </form>
+                </table>
+                <div className="row">
+                    <input
+                        onClick={onReg}
+                        className="signUpBtn col-4 btn btn-dark btn-lg rounded-pill"
+                        type="button"
+                        value="회원가입"></input>
+
+                    <Modal open={modalOpen} close={closeModal} header="REG ENDING">
+                        ㅁaaaa
+                    </Modal>
+                </div>
             </div>
         </div>
     )
