@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Receipt from "./Receipt";
 import styled from 'styled-components'
-import {Link} from "react-router-dom"
+import {Link, Switch} from "react-router-dom"
 
 let MapBody = styled.div `
     padding-top:78px;
@@ -39,7 +39,7 @@ function Map() {
                     </Link>
                 </div>
 
-                <div id="Map" className="col-xl-8 col-12"></div>
+                <div id="Map" className="col-xl-8 col-12"/>
             </div>
         </MapBody>
     );

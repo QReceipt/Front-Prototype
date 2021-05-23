@@ -12,28 +12,29 @@ import styled from 'styled-components';
 axios.defaults.baseURL = "http://mmyu.synology.me:8080/";
 axios.defaults.withCredentials = true;
 
-const Navi = styled.div`
+const Navi = styled.div `
   margin : 0;
   padding : 0;
   z-index : 100;
+  backgroud-color : #fff;
 `;
 
 function App() {
-  return (
-    
-    <HashRouter>
-      <Navi>
-      <Navigation className="col-12" id="Nav" />
-      </Navi>
-    <div className="App" id="Body" >
-    <Route path="/" exact={true} component={Main}/>
-    <Route path="/signup" component={Register}/>
-    <Route path="/detail" component={Detail}/>
-    <Route path="/list" component={SeeAll}/>
-    <Route path="/map" component={Map}/>
-  </div>
-  </HashRouter>
-  );
+    return (
+
+        <HashRouter>
+            <Navi>
+                <Navigation className="col-12" id="Nav"/>
+            </Navi>
+            <div className="App" id="Body">
+                <Route path="/" exact={true} component={Main}/>
+                <Route path="/signup" component={Register}/>
+                <Route path="/detail" component={Detail}/>
+                <Route path="/list" component={SeeAll}/>
+                <Route path="/map" component={Map}/>
+            </div>
+        </HashRouter>
+    );
 }
 
 export default App;

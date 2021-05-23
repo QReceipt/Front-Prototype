@@ -81,8 +81,39 @@
     color : white;
 }
 
+.Item{
+    border-top: solid rgb(143, 143, 143) 1px;
+    margin-block : 15px;
+    padding-block : 15px;
+    text-align: left;
+}
+
+.subItem>*{
+    display:inline;
+    margin-inline : 7px;
+}
+
+.subItem>h2{
+    font-weight: bolder;
+    font-size : 20px;
+}
+
+.subItem{
+    text-align: right;
+}
+
+@media (min-width:1000px){
+    #narrow{
+        display:none;
+    }
+}
+
 @media (max-width:1000px) {
     .shop-name {
         font-size: 2rem;
+    }
+
+    #wide{
+        display : none;
     }
 }

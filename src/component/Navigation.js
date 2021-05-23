@@ -66,9 +66,6 @@ function Sidebar() {
                 <li role="presentation">
                     <Link className="plusFunS" to="/">메인</Link>
                 </li>
-                <li role="presentation">
-                    <Link className="plusFunS active" to="/Detail">영수증 상세보기</Link>
-                </li>
                 <li role="presentation"> 
                     <Link className="plusFunS" to="/list">영수증 모아보기</Link>
                 </li>

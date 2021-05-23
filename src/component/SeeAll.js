@@ -41,7 +41,7 @@ function SeeAll() {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-12">
+                    <div id="wide"  className="col-12">
                         <table className="receipt_table">
                             <tr className="table-title">
                                 <Td>00:00</Td>
@@ -52,7 +52,9 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                        <Link className="btnTypo" to="/Detail">더보기</Link>
+                                    </button>
                                 </Td>
                             </tr>
                             <tr className="table-title">
@@ -64,7 +66,9 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                        <Link className="btnTypo" to="/Detail">더보기</Link>
+                                    </button>
                                 </Td>
                             </tr>
                             <tr className="table-title">
@@ -76,10 +80,71 @@ function SeeAll() {
                                 <Td className="shop-name">펜트하우스</Td>
                                 <Td>청아예술트로피/대상/서울음대프리패스 외 2건</Td>
                                 <Td>
-                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button"><Link className="btnTypo" to="/Detail">더보기</Link></button>
+                                    <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                        <Link className="btnTypo" to="/Detail">더보기</Link>
+                                    </button>
                                 </Td>
                             </tr>
                         </table>
+                    </div>
+                </div>
+                <div id="narrow" className="col-12">
+                    <div className="col-12">
+                        <div className="Item">
+                            <h2 className="shop-name">00:00 펜트하우스</h2>
+                            <p>주문번호:BOWG009KTK</p>
+                            <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
+                            <div class="subItem">
+                                <h2>25000원</h2>
+                                <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                    <Link className="btnTypo" to="/Detail">더보기</Link>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="Item">
+                            <h2 className="shop-name">00:00 펜트하우스</h2>
+                            <p>주문번호:BOWG009KTK</p>
+                            <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
+                            <div class="subItem">
+                                <h2>25000원</h2>
+                                <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                    <Link className="btnTypo" to="/Detail">더보기</Link>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="Item">
+                            <h2 className="shop-name">00:00 펜트하우스</h2>
+                            <p>주문번호:BOWG009KTK</p>
+                            <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
+                            <div class="subItem">
+                                <h2>25000원</h2>
+                                <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                    <Link className="btnTypo" to="/Detail">더보기</Link>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="Item">
+                            <h2 className="shop-name">00:00 펜트하우스</h2>
+                            <p>주문번호:BOWG009KTK</p>
+                            <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
+                            <div class="subItem">
+                                <h2>25000원</h2>
+                                <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                    <Link className="btnTypo" to="/Detail">더보기</Link>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="Item">
+                            <h2 className="shop-name">00:00 펜트하우스</h2>
+                            <p>주문번호:BOWG009KTK</p>
+                            <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
+                            <div class="subItem">
+                                <h2>25000원</h2>
+                                <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
+                                    <Link className="btnTypo" to="/Detail">더보기</Link>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
