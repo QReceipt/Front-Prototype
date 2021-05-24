@@ -1,0 +1,36 @@
+#titleName{
+    font-size:270%;
+    margin-top:5%;
+}
+
+
+#shoptable{
+    margin-top:9%;
+    margin-bottom:9%;
+}
+
+
+@media (min-width:1200px) {
+    .shopOption > * {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .shopOption {
+        padding-right: 5px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    .shopOption {
+        padding: 35px;
+    }
+
+    .shopOption > * {
+        border-block: soild #979797 1px;
+        padding-inline: 20px;
+        padding-block: 5px;
+    }
+}

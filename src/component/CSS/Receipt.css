@@ -91,3 +91,12 @@ h1{
     font-size : 350%;
     margin-block: 3%;
 }
+
+.linkCheck{
+
+}
+
+.linkCheck:hover{
+    color:#DAED79;
+    text-decoration: none;
+}

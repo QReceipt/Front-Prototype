@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
+import {Link} from "react-router-dom";
 
 const Ended = styled.div `
     display:block;
@@ -125,7 +126,7 @@ function Login() {
             </dl>
             <dl>
                 <dd className="plus w-100">아직 가입이 안 되어 있다면?</dd>
-                <dt className="plusFun w-100">회원가입</dt>
+                <Link to="/signup"><dt className="plusFun w-100">회원가입</dt></Link>
             </dl>
         </Ended>
     </div>

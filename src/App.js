@@ -4,6 +4,7 @@ import Main from "./component/Main";
 import Detail from "./component/Detail";
 import Navigation from "./component/Navigation";
 import SeeAll from "./component/SeeAll";
+import Shop from "./component/Shop";
 import Map from "./component/Map";
 import {HashRouter, Route} from "react-router-dom";
 import axios from 'axios';
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/detail" component={Detail}/>
                 <Route path="/list" component={SeeAll}/>
                 <Route path="/map" component={Map}/>
+                <Route path="/shop" component={Shop}/>
             </div>
         </HashRouter>
     );
