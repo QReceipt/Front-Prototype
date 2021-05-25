@@ -41,7 +41,7 @@ function Map() {
 
                 <div className="col-xl-8 col-md-12">
                     <div id="Map" className="w-100 h-100"/>
-                <Link className="Navi active" to="/Detail">
+                    <Link className="Navi active" to="/Detail">
                         <input
                             className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
                             type="button"

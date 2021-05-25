@@ -60,14 +60,14 @@
     justify-content: space-between;
 }
 
-.date-dd > li {
+.date-dd > button {
     display: block;
     float: left;
     font-size: 5rem;
     color: #c0c0c0;
 }
 
-.date-dd > li:hover {
+.date-dd > button:hover {
     color: #DAED79;
 }
 

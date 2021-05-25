@@ -3,23 +3,31 @@ import "./CSS/SeeAll.css"
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
 
-let DetailBody = styled.div `
+const DetailBody = styled.div `
     padding-top:78px;
     margin : 3%;
 `;
 
-let Td = styled.td `
+const Td = styled.td `
     font-size : 100%;
 `;
 
 function SeeAll() {
-    var i = 0;
-    var lists = [];
+    const [selectNum, setSelectNum] = useState(-1);
 
-    while (i < 9) {
-        lists.push(<li className="date-ddlist">{i + 1}</li>);
-        i += 1;
-    }
+    let idx = 0;
+    let lists = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+    ];
+
     return (
         <DetailBody className="container-fulid">
             <div className="row text-center w-100 p-0 m-0">
@@ -37,11 +45,24 @@ function SeeAll() {
                     <div className="row">
                         <div className="col-10">
                             <ul className="date-dd">
-                                {lists}
+                                {
+                                    lists.map((item, idx) => (
+                                        <button
+                                            onClick={() => {
+                                                setSelectNum(idx);
+                                            }}
+                                            className="date-ddlist"
+                                            style={{
+                                                color: `${selectNum === idx
+                                                    ? 'green'
+                                                    : '#c0c0c0'}`
+                                            }}>{idx + 1}</button>
+                                    ))
+                                }
                             </ul>
                         </div>
                     </div>
-                    <div id="wide"  className="col-12">
+                    <div id="wide" className="col-12">
                         <table className="receipt_table">
                             <tr className="table-title">
                                 <Td>00:00</Td>

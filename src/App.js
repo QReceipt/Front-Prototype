@@ -15,18 +15,21 @@ axios.defaults.withCredentials = true;
 const Navi = styled.div `
   margin : 0;
   padding : 0;
+  position:fixed;
+  top:0;
+  left : 0;
   z-index : 100;
   backgroud-color : #fff;
 `;
 
 function App() {
     return (
-
         <HashRouter>
             <Navi>
                 <Navigation className="col-12" id="Nav"/>
             </Navi>
             <div className="App" id="Body">
+                {/* {id==="deliver"?} */}
                 <Route path="/" exact={true} component={Main}/>
                 <Route path="/signup" component={Register}/>
                 <Route path="/detail" component={Detail}/>
