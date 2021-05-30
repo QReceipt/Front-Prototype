@@ -47,7 +47,6 @@ button {
 #menubar {
     margin-top: 3%;
     margin-left: 0;
-    background-color: #fff;
 }
 
 .hambuger {
@@ -96,8 +95,9 @@ body {
     list-style: none;
     padding: 0;
 }
-.talkbubble>ul>sli{
+.talkbubble>ul> li{
     margin-bottom : 20px;
+    color:black;
 }
 
 .talkbubble:before {
@@ -116,6 +116,7 @@ body {
 .plusFunS{
     text-decoration: none;
     font-size:110%;
+    color:black;
 }
 
 .plusFunS:hover{
@@ -123,7 +124,7 @@ body {
     font-size:200%;
 }
 
-@media (min-width : 768px) {
+@media (min-width : 1000px) {
     .navLi {
         margin-block: 50px;
         display: inline;

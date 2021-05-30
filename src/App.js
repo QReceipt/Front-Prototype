@@ -8,6 +8,7 @@ import Map from "./component/Map";
 import {HashRouter, Route} from "react-router-dom";
 import axios from 'axios';
 import styled from 'styled-components';
+import Shop from "./component/Shop"
 
 axios.defaults.baseURL = "http://mmyu.synology.me:8080/";
 axios.defaults.withCredentials = true;
@@ -29,12 +30,17 @@ function App() {
                 <Navigation className="col-12" id="Nav"/>
             </Navi>
             <div className="App" id="Body">
-                {/* {id==="deliver"?} */}
+                {/* {
+                    userCat === "Seller"
+                        ? <Route path="/detail" component={Shop}/>
+                        : <Route path="/detail" component={Detail}/>
+                } */}
                 <Route path="/" exact={true} component={Main}/>
                 <Route path="/signup" component={Register}/>
-                <Route path="/detail" component={Detail}/>
                 <Route path="/list" component={SeeAll}/>
                 <Route path="/map" component={Map}/>
+                <Route path="/detail" component={Detail}/>
+                <Route path="/shop" component={Shop}/>
             </div>
         </HashRouter>
     );
