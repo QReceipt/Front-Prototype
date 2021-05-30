@@ -9,6 +9,7 @@ const DetailBody = styled.div `
     margin : 3%;
     position:relatvie;
     min-height:100%;
+    padding-bottom:100px;
 `;
 
 const Td = styled.td `
@@ -32,7 +33,7 @@ function SeeAll() {
     ];
 
     return (
-        <div>
+        <div className="w-100 h-100 m-0 p-0">
         <DetailBody className="container-fulid">
             <div className="row text-center w-100 p-0 m-0">
                 <div className="col-xl-3">
