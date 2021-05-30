@@ -5,9 +5,12 @@
 .index {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
 }
 
-.index > * {
+.index > button {
     font-size: 150%;
     padding: 3%;
 }
@@ -17,24 +20,28 @@
     text-align: left;
 }
 
-.sideIndex{
-    color : black;
+.index > button:active{
+    font-size:250%;
 }
 
-.sideIndex:hover{
-    color : #DAED79;
-    font-size : 250%;
-}
-
-@media (min-width:1200px) {
+@media (min-width:768px) and (max-width:1200px) {
     .detailOption > * {
         padding-right: 15px;
     }
-}
-
-@media (max-width: 1200px) {
     .index {
         margin-block: 3%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .index {
+        margin-block: 3%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .receipt {
@@ -45,7 +52,7 @@
         font-size: 250%;
     }
 
-    .index > li {
+    .index > button {
         display: inline;
         padding: 5%;
     }
@@ -56,7 +63,7 @@
 
 }
 
-@media (max-width:1000px) {
+@media (max-width:768px) {
     .detailOption {
         padding: 35px;
     }

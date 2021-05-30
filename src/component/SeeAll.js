@@ -2,10 +2,13 @@ import React, {useState} from "react";
 import "./CSS/SeeAll.css"
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
+import Footer from "./Footer";
 
 const DetailBody = styled.div `
     padding-top:78px;
     margin : 3%;
+    position:relatvie;
+    min-height:100%;
 `;
 
 const Td = styled.td `
@@ -29,6 +32,7 @@ function SeeAll() {
     ];
 
     return (
+        <div>
         <DetailBody className="container-fulid">
             <div className="row text-center w-100 p-0 m-0">
                 <div className="col-xl-3">
@@ -115,7 +119,7 @@ function SeeAll() {
                             <h2 className="shop-name">00:00 펜트하우스</h2>
                             <p>주문번호:BOWG009KTK</p>
                             <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
-                            <div class="subItem">
+                            <div className="subItem">
                                 <h2>25000원</h2>
                                 <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
                                     <Link className="btnTypo" to="/Detail">더보기</Link>
@@ -126,7 +130,7 @@ function SeeAll() {
                             <h2 className="shop-name">00:00 펜트하우스</h2>
                             <p>주문번호:BOWG009KTK</p>
                             <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
-                            <div class="subItem">
+                            <div className="subItem">
                                 <h2>25000원</h2>
                                 <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
                                     <Link className="btnTypo" to="/Detail">더보기</Link>
@@ -137,7 +141,7 @@ function SeeAll() {
                             <h2 className="shop-name">00:00 펜트하우스</h2>
                             <p>주문번호:BOWG009KTK</p>
                             <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
-                            <div class="subItem">
+                            <div className="subItem">
                                 <h2>25000원</h2>
                                 <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
                                     <Link className="btnTypo" to="/Detail">더보기</Link>
@@ -148,7 +152,7 @@ function SeeAll() {
                             <h2 className="shop-name">00:00 펜트하우스</h2>
                             <p>주문번호:BOWG009KTK</p>
                             <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
-                            <div class="subItem">
+                            <div className="subItem">
                                 <h2>25000원</h2>
                                 <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
                                     <Link className="btnTypo" to="/Detail">더보기</Link>
@@ -159,7 +163,7 @@ function SeeAll() {
                             <h2 className="shop-name">00:00 펜트하우스</h2>
                             <p>주문번호:BOWG009KTK</p>
                             <p>청아예술트로피/대상/서울음대프리패스 외 2건</p>
-                            <div class="subItem">
+                            <div className="subItem">
                                 <h2>25000원</h2>
                                 <button className="btn btn-outline-success btn-lg rounded-pill" type="button">
                                     <Link className="btnTypo" to="/Detail">더보기</Link>
@@ -170,6 +174,8 @@ function SeeAll() {
                 </div>
             </div>
         </DetailBody>
+        <Footer />
+        </div>
     );
 }
 

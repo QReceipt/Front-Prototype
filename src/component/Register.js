@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, checkPassword, onRegAPI} from '../api/User';
+import {Router} from "react-router";
 
 const Ended = styled.div `
     display:block;
@@ -45,7 +46,6 @@ function RegisterForm() {
     const [phoneNum1, setPhoneNum1] = useState("");
     const [phoneNum2, setPhoneNum2] = useState("");
     const [phoneNum3, setPhoneNum3] = useState("");
-    const [phoneNum, setPhoneNum] = useState("");
     const [userCat, setUserCat] = useState("");
 
     const onChangePw = (e) => {
@@ -83,12 +83,7 @@ function RegisterForm() {
         setPhoneNum3(e.target.value);
     }
 
-    const onChangePhoneNum = () => {
-        setPhoneNum(phoneNum1 + "-" + phoneNum2 + "-" + phoneNum3);
-    }
-
     const onChangeUseCat = (e) => {
-        console.log(e.target.value);
         setUserCat(e.target.value);
     }
 
@@ -98,7 +93,7 @@ function RegisterForm() {
         } else {
             // 이메일 형식 체크
             const checkEmail = isEmail(email);
-            const Num = onChangePhoneNum();
+            const Num = phoneNum1 + "-" + phoneNum2 + "-" + phoneNum3;
             const checkPw = checkPassword(pw, pwCheck);
 
             if (!checkEmail) {
@@ -112,7 +107,11 @@ function RegisterForm() {
             const res = await onRegAPI(pw, name, email, add1, add2, Num, userCat);
 
             if (res) {
-                alert("회원가입에 성공했습니다.");
+                let moveMain = window.confirm("회원가입에 성공했습니다. 메인 화면으로 돌아가시겠습니까?");
+
+                if (moveMain) {
+                    window.location.href = "/";
+                }
             } else {
                 console.log("HELP ME");
             }
@@ -224,6 +223,7 @@ function RegisterForm() {
                                 <select
                                     onChange={onChangeUseCat}
                                     className="w-100 py-2 px-4 border rounded-pill">
+                                    <option value="" disabled selected hidden>유형을 선택해주세요</option>
                                     <option value="손님">손님</option>
                                     <option value="점주">점주</option>
                                     <option value="배달원">배달원</option>

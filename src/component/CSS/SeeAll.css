@@ -102,13 +102,13 @@
     text-align: right;
 }
 
-@media (min-width:1000px){
+@media (min-width:768px){
     #narrow{
         display:none;
     }
 }
 
-@media (max-width:1000px) {
+@media (max-width:768px) {
     .shop-name {
         font-size: 2rem;
     }

@@ -1,10 +1,13 @@
 import React from "react";
 import Reg from "./Register"
+import Footer from "./Footer"
 import "./CSS/Main.css"
 import styled from 'styled-components'
 
 let DetailBody = styled.div `
-    padding-top:78px;
+    padding-block:78px;
+    position:relative;
+    min-height:100%;
 `;
 
 let LoginForm = styled.div `
@@ -18,8 +21,8 @@ let Body = styled.div`
 `;
 
 function SignUp() {
-    
     return (
+        <div>
         <DetailBody className="container-fulid">
             <Body className="row">
                 <LoginForm  className="classBody col-md-4">
@@ -27,6 +30,8 @@ function SignUp() {
                 </LoginForm>
             </Body>
         </DetailBody>
+        <Footer />
+        </div>
     );
 }
 

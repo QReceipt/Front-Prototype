@@ -1,11 +1,14 @@
 import React, {useEffect} from "react";
 import Receipt from "./Receipt";
+import Footer from "./Footer";
 import styled from 'styled-components'
-import {Link, Switch} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 let MapBody = styled.div `
     padding-top:78px;
     margin : 3%;
+    position:relative;
+    min-height:100%;
 `;
 
 function Map() {
@@ -26,30 +29,33 @@ function Map() {
     }, []);
 
     return (
-        <MapBody className="container-fulid">
-            <div className="row text-center w-100 p-0 m-0">
-                <div className="receipt col-xl-4 col-md-12 align-self-center">
-                    <h1 className="Title">가게 지도 보기</h1>
-                    <Receipt form="1"/>
-                    <Link className="active" to="/Detail">
-                        <input
-                            className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
-                            type="button"
-                            value="이전화면으로 돌아가기"></input>
-                    </Link>
-                </div>
+        <div>
+            <MapBody className="container-fulid">
+                <div className="row text-center w-100 p-0 m-0">
+                    <div className="receipt col-xl-4 col-md-12 align-self-center">
+                        <h1 className="Title">가게 지도 보기</h1>
+                        <Receipt form="1"/>
+                        <Link className="active" to="/Detail">
+                            <input
+                                className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
+                                type="button"
+                                value="이전화면으로 돌아가기"></input>
+                        </Link>
+                    </div>
 
-                <div className="col-xl-8 col-md-12">
-                    <div id="Map" className="w-100 h-100"/>
-                    <Link className="Navi active" to="/Detail">
-                        <input
-                            className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
-                            type="button"
-                            value="길 안내하기"></input>
-                    </Link>
+                    <div className="col-xl-8 col-md-12">
+                        <div id="Map" className="w-100 h-100"/>
+                        <Link className="Navi active" to="/Detail">
+                            <input
+                                className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
+                                type="button"
+                                value="길 안내하기"></input>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        </MapBody>
+            </MapBody>
+            <Footer/>
+        </div>
     );
 }
 

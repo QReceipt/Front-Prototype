@@ -6,7 +6,7 @@
     font-size: 300%;
 }
 
-@media screen and (max-size:1200px) {
+@media screen and (max-size:768px) {
     #Map{
         width : 300px;
         height : 400px;

@@ -39,6 +39,11 @@ button {
     transition: transform 0.3s ease;
 }
 
+.plusFun:visited{
+    text-decoration: none;
+    color:black;
+}
+
 #menubar {
     margin-top: 3%;
     margin-left: 0;
@@ -118,7 +123,7 @@ body {
     font-size:200%;
 }
 
-@media (min-width : 1000px) {
+@media (min-width : 768px) {
     .navLi {
         margin-block: 50px;
         display: inline;
@@ -129,7 +134,7 @@ body {
     }
 }
 
-@media (max-width : 1000px) {
+@media (max-width : 768px) {
     .navLi {
         margin-block: 50px;
         display: block;
