@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
+import {Link} from "react-router-dom";
 
 const Ended = styled.div `
     display:block;
@@ -16,11 +17,11 @@ const Text = styled.div `
 `;
 
 const Td = styled.td `
-    font-size:130%;
+    font-size:110%;
 `;
 
 const Th = styled.td `
-    font-size:130%;
+    font-size:110%;
 `;
 
 function LoginForm(props) {
@@ -64,7 +65,7 @@ function Login() {
             if (res) {
                 console.log("SUCCESS");
             } else {
-                console.log("HELP ME");
+                console.log(res);
             }
 
         }
@@ -121,11 +122,11 @@ function Login() {
         <Ended>
             <dl>
                 <dd className="plus w-100">간단 조회만 하려면?</dd>
-                <dt className="plusFun w-100">전화번호로 찾기</dt>
+                <dt className="plusFun w-100">QR로 찾기</dt>
             </dl>
             <dl>
-                <dd className="plus w-100">아직 가입이 안 되어 있다면?</dd>
-                <dt className="plusFun w-100">회원가입</dt>
+                <dd className="plus w-100">아직 가입을 안했다면?</dd>
+                <dt className="w-100"><Link className="plusFun" to="/signup">회원가입</Link></dt>
             </dl>
         </Ended>
     </div>

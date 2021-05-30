@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './CSS/Navigation.css';
 import styled from 'styled-components';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 let NaviBody = styled.div `
     padding: 0;

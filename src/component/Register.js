@@ -20,7 +20,7 @@ const Title = styled.div `
 `;
 
 const Td = styled.td `
-    font-size:130%;
+    font-size:120%;
 `;
 
 const Th = styled.td `

@@ -18,7 +18,7 @@ let Dt = styled.dt`
     padding-bottom:10px;
 `;
 
-let dd = styled.dd`
+let Dd = styled.dd`
     font-size : 120%;
 `;
 
@@ -57,23 +57,23 @@ function Detail({
                 <div className="detailOption col-xl-auto col-md-5">
                     <Dl>
                         <Dt>배달 주소</Dt>
-                        <dd>{address}</dd>
+                        <Dd>{address}</Dd>
                     </Dl>
                     <Dl>
                         <Dt>연락처</Dt>
-                        <dd>{phoneNum}</dd>
+                        <Dd>{phoneNum}</Dd>
                     </Dl>
                     <Dl>
                         <Dt>가게 요청사항</Dt>
-                        <dd>{shopOrder}</dd>
+                        <Dd>{shopOrder}</Dd>
                     </Dl>
                     <Dl>
                         <Dt>배달 요청사항</Dt>
-                        <dd>{deliveryOrder}</dd>
+                        <Dd>{deliveryOrder}</Dd>
                     </Dl>
                     <Dl>
                         <Dt>수저/포크 유무</Dt>
-                        <dd>{spoonCheck}</dd>
+                        <Dd>{spoonCheck}</Dd>
                     </Dl>
                     <Dl>
                         <Dt>원산지 표시</Dt>
