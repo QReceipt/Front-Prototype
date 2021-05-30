@@ -109,6 +109,10 @@
 }
 
 @media (max-width:768px) {
+    .date-dd{
+        display: none;
+    }
+
     .shop-name {
         font-size: 2rem;
     }

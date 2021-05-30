@@ -121,10 +121,6 @@ function Login() {
         </div>
         <Ended>
             <dl>
-                <dd className="plus w-100">간단 조회만 하려면?</dd>
-                <dt className="plusFun w-100">QR로 찾기</dt>
-            </dl>
-            <dl>
                 <dd className="plus w-100">아직 가입을 안했다면?</dd>
                 <dt className="w-100"><Link className="plusFun" to="/signup">회원가입</Link></dt>
             </dl>
