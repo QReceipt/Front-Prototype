@@ -32,19 +32,15 @@ let Body = styled.div `
     align-content:center;
 `;
 
-function Main({logined}) {
+function Main({setUser}) {
     return (
         <div>
             <DetailBody className="container-fulid">
                 <Body className="row">
                     <Title className="col-md-12 display-2">QReceipt</Title>
-                    {
-                        logined
-                            ? <p>login</p>
-                            : <LoginForm className="classBody col-lg-4">
-                                    <Login id="Receipt"/>
-                                </LoginForm>
-                    }
+                    <LoginForm className="classBody col-lg-4">
+                        <Login id="Receipt" setUser={setUser}/>
+                    </LoginForm>
                 </Body>
             </DetailBody>
             <Footer/>

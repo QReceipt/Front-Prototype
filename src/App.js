@@ -4,11 +4,13 @@ import Main from "./component/Main";
 import Navigation from "./component/Navigation";
 import SeeAll from "./component/SeeAll";
 import Map from "./component/Map";
-import {HashRouter, Route,Link,Switch} from "react-router-dom";
+import {BrowserRouter, Route, Link, Switch} from "react-router-dom";
 import axios from 'axios';
 import styled from 'styled-components';
 import Shop from "./component/Shop";
+import Detail from "./component/Detail";
 import SwitchUser from "./component/SwitchUser.js";
+import {useState} from "react";
 import Profile from "./component/Profile.js";
 
 axios.defaults.baseURL = "http://mmyu.synology.me:8080/";
@@ -25,21 +27,41 @@ const Navi = styled.div `
 `;
 
 function App() {
+    const [userCat, setUserCat] = useState("a");
+    const setUser = (value) =>{
+        console.log(value);
+        setUserCat(value);
+    }
+
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Navi>
                 <Navigation className="col-12" id="Nav"/>
             </Navi>
             <div className="App" id="Body">
-                <Route path="/" exact={true} component={Main}/>
-                <Route path="/signup" component={Register}/>
-                <Route path="/list" component={SeeAll}/>
-                <Route path="/map" component={Map}/>
-                <Route path="/profile" component={Profile} />
-                <Route path="/detail" component={SwitchUser}/>
-                <Route path="/shop" component={Shop}/>
+                <Switch>
+                    <Route path="/" exact={true} render={()=>(
+                        <Main 
+                        setUser = {setUser}
+                        />
+                    )}/>
+                    <Route path="/signup" component={Register}/>
+                    <Route path="/list" component={SeeAll}/>
+                    <Route path="/map" component={Map}/>
+                    <Route path="/profile" component={Profile}/> 
+                    {
+                        userCat === null
+                            ? <p>not found</p>
+                            : (
+                                userCat === "Seller"
+                                    ? <Route path="/detail" component={Shop}/>
+                                    : <Route path="/detail" component={Detail}/>
+                            )
+                    }
+                    <Route path="/shop" component={Shop}/>
+                </Switch>
             </div>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 

@@ -15,7 +15,7 @@ export const onLoginAPI = async (id, pw) => {
     try {
         const res = await axios.post("user/login", body, headers);
 
-        console.log(res);
+        console.log(res.data);
 
         return res.data;
     } catch (error) {

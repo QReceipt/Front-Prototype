@@ -14,8 +14,8 @@ const FooterBody = styled.div`
 
 function Footer() {
     return (
-        <FooterBody>QReceipt
-
+        <FooterBody>
+            QReceipt
         </FooterBody>
     );
 }

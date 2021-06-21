@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
-import {Link} from "react-router-dom";
+import {Link, Router, useHistory} from "react-router-dom";
 import Profile from "./Profile";
 
 const Ended = styled.div `
@@ -25,17 +25,21 @@ const Th = styled.td `
     font-size:110%;
 `;
 
-function LoginForm(props) {
+function LoginForm({setUser}) {
     return (
         <div className="frame">
-            <Login/>
+            <Login 
+            setUser = {setUser}
+            />
         </div>
     )
 }
 
-function Login() {
+function Login({setUser}) {
     const [id, setId] = useState("");
     const [pw, setPw] = useState("");
+
+    const history = useHistory();
 
     const onChangeId = (e) => {
         setId(e.target.value);
@@ -65,7 +69,8 @@ function Login() {
 
             if (res) {
                 console.log("SUCCESS");
-                window.location.href = "/profile";
+                setUser("Customer");
+                history.push('/list');
             } else {
                 console.log(res);
             }
