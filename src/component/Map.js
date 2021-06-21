@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Receipt from "./Receipt";
 import Footer from "./Footer";
 import styled from 'styled-components'
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 
 let MapBody = styled.div `
     padding-top:78px;
@@ -28,6 +28,8 @@ function Map() {
             .Map(container, options);
     }, []);
 
+    let history = useHistory();
+
     return (
         <div>
             <MapBody className="container-fulid">
@@ -39,7 +41,10 @@ function Map() {
                             <input
                                 className="backBtn col-4 m-3 display-3 btn btn-dark btn-lg rounded-pill"
                                 type="button"
-                                value="이전화면으로 돌아가기"></input>
+                                value="이전화면으로 돌아가기"
+                                onClick={()=>{{
+                                    history.goBack();
+                                }}}></input>
                         </Link>
                     </div>
 

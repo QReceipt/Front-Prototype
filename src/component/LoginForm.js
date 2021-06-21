@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
 import {Link} from "react-router-dom";
+import Profile from "./Profile";
 
 const Ended = styled.div `
     display:block;
@@ -64,6 +65,7 @@ function Login() {
 
             if (res) {
                 console.log("SUCCESS");
+                window.location.href = "/profile";
             } else {
                 console.log(res);
             }
