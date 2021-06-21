@@ -9,9 +9,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Shop from "./component/Shop";
 import Detail from "./component/Detail";
-import SwitchUser from "./component/SwitchUser.js";
 import {useState} from "react";
-import Profile from "./component/Profile.js";
 
 axios.defaults.baseURL = "http://mmyu.synology.me:8080/";
 axios.defaults.withCredentials = true;
@@ -48,7 +46,6 @@ function App() {
                     <Route path="/signup" component={Register}/>
                     <Route path="/list" component={SeeAll}/>
                     <Route path="/map" component={Map}/>
-                    <Route path="/profile" component={Profile}/> 
                     {
                         userCat === null
                             ? <p>not found</p>

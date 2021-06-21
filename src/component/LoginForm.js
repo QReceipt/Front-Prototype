@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import './CSS/Receipt.css';
 import {isEmail, onLoginAPI} from '../api/User';
-import {Link, Router, useHistory} from "react-router-dom";
-import Profile from "./Profile";
+import {Link, useHistory} from "react-router-dom";
 
 const Ended = styled.div `
     display:block;
